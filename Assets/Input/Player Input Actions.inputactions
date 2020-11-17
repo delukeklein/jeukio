@@ -1,5 +1,5 @@
 {
-    "name": "Player Input",
+    "name": "Player Input Actions",
     "maps": [
         {
             "name": "Player",
@@ -7,9 +7,9 @@
             "actions": [
                 {
                     "name": "Move",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "217886cf-c0f0-4160-8eed-9d0f37682f9c",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
                 },
@@ -18,6 +18,14 @@
                     "type": "Button",
                     "id": "de59924b-fa3e-4931-9d62-741b3848339d",
                     "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Rotate",
+                    "type": "Value",
+                    "id": "769b97a6-b9e6-4306-96b5-f1d3d585c4ce",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
                 }
@@ -86,6 +94,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4eed4913-46c0-47d7-b5c0-ca689d2c4564",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotate",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
