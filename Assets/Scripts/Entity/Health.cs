@@ -9,6 +9,6 @@ public class Health : MonoBehaviour
     public void Heal(uint amount) => health = (int) Mathf.Clamp(health + amount, 0, maxHealth);
 
     public void Reduce(uint amount) => health -= (int) amount;
-
-    private void Start() => health = health = (int)Mathf.Clamp(health, 0, maxHealth);
+     
+    private void Start() => health = Mathf.Clamp(health, 0, maxHealth);
 }
