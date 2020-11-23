@@ -8,4 +8,6 @@ public class WeaponData : ScriptableObject
     public uint Damage;
 
     public uint Recoil;
+
+    public uint FireRate;
 }
