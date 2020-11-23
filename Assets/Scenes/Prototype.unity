@@ -428,6 +428,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4448069079060500}
+  - component: {fileID: 1743903907334463}
   - component: {fileID: 82712216076579364}
   - component: {fileID: 54587625557531086}
   - component: {fileID: 136239540658400292}
@@ -439,6 +440,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1743903907334463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743903907334462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 143b1ccb9db5408418ae67ec39924681, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 116
+  maxHealth: 10
 --- !u!4 &4204583439870954
 Transform:
   m_ObjectHideFlags: 0
@@ -727,7 +742,7 @@ MonoBehaviour:
     woodPhysMat: []
     metalAndGlassPhysMat: []
     grassPhysMat:
-    - {fileID: 13400000, guid: 48bbde3049f29b247a56af17d2b0381f, type: 2}
+    - {fileID: 0}
     dirtAndGravelPhysMat: []
     rockAndConcretePhysMat:
     - {fileID: 13400000, guid: 8b2bc5d65b8a23249ac65e6a71b72204, type: 2}
@@ -750,17 +765,17 @@ MonoBehaviour:
     woodClipSet: []
     metalAndGlassClipSet: []
     grassClipSet:
-    - {fileID: 8300000, guid: e70c5fa5ed6b97f41aa555d63ca56d42, type: 3}
-    - {fileID: 8300000, guid: d3947cf2c6783a447bd0dae10cd8bb21, type: 3}
-    - {fileID: 8300000, guid: 41b975e693999f942b5755a8f054c4ce, type: 3}
-    - {fileID: 8300000, guid: 818617f6fe74a6345a5babff80a756e2, type: 3}
-    - {fileID: 8300000, guid: 2667de89ddda8dc409eaf8f8261d1d8c, type: 3}
-    - {fileID: 8300000, guid: 76909016e12b7b4469602526ddc6a164, type: 3}
-    - {fileID: 8300000, guid: 0533ad72641beb64c84742701ea7fcd4, type: 3}
-    - {fileID: 8300000, guid: 37aa905a30faf0d45a213f924449a6fb, type: 3}
-    - {fileID: 8300000, guid: 5991900ee6498594ab6d0c668e329eb1, type: 3}
-    - {fileID: 8300000, guid: e899671e45e608e4db37f6d6701c35ba, type: 3}
-    - {fileID: 8300000, guid: 01c377cd295d33a4db93c9467d59a6dd, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     dirtAndGravelClipSet: []
     rockAndConcreteClipSet:
     - {fileID: 8300000, guid: a9e804a8165699a49bceb84d083a34a6, type: 3}
