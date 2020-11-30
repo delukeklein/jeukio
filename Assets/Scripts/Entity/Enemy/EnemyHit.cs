@@ -5,7 +5,13 @@ public class EnemyHit : MonoBehaviour
 {
     private Health health;
 
-    private void Start() => health = GetComponent<Health>();
+    private PointsHolder pointsHolder;
+
+    private void OnEnable()
+    {
+        health = GetComponent<Health>();
+        pointsHolder = FindObjectOfType<PointsHolder>().GetComponent<PointsHolder>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -13,6 +19,8 @@ public class EnemyHit : MonoBehaviour
 
         if(collision.gameObject.TryGetComponent(out bullet))
         {
+            pointsHolder += 10;
+
             health.Reduce(25);
 
             if(health.isDepleted)
