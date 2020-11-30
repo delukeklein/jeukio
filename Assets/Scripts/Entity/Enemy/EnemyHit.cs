@@ -11,7 +11,7 @@ public class EnemyHit : MonoBehaviour
     {
         BulletScript bullet;
 
-        if(collision.gameObject.TryGetComponent(out bullet)
+        if(collision.gameObject.TryGetComponent(out bullet))
         {
             health.Reduce(25);
         }
