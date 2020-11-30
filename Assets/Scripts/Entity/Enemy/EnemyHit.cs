@@ -14,6 +14,11 @@ public class EnemyHit : MonoBehaviour
         if(collision.gameObject.TryGetComponent(out bullet))
         {
             health.Reduce(25);
+
+            if(health.isDepleted)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
