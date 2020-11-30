@@ -4,11 +4,11 @@ public class PointsHolder : MonoBehaviour
 {
     private int points;
 
-    public void Add(uint amount) => points += amount;
+    public void Add(uint amount) => points += (int) amount;
 
     public bool Reduce(uint amount)
     {
-        int points = this.points - amount;
+        int points = this.points - (int) amount;
 
         if(points >= 0)
         {
