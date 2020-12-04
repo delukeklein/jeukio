@@ -16,11 +16,11 @@ MonoBehaviour:
   m_AdvancedMode: 0
   threshold:
     m_OverrideState: 1
-    m_Value: 0.12
+    m_Value: 0.13
     min: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.25
+    m_Value: 0.4
     min: 0
   scatter:
     m_OverrideState: 0
@@ -87,13 +87,13 @@ MonoBehaviour:
   m_AdvancedMode: 0
   shadows:
     m_OverrideState: 1
-    m_Value: {r: 0.254717, g: 0.254717, b: 0.254717, a: 1}
+    m_Value: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
   highlights:
     m_OverrideState: 1
-    m_Value: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
+    m_Value: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   postExposure:
     m_OverrideState: 1
-    m_Value: 0.29
+    m_Value: 0.72
   contrast:
     m_OverrideState: 0
     m_Value: 0
