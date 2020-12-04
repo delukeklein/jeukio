@@ -9,10 +9,13 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] Transform target;
 
     [SerializeField] float distThreshold = 10f;
+    [SerializeField] float AttThreshold = 1.5f; 
 
-    [SerializeField] enum AIState {Idle, Chaising};
+     [SerializeField] enum AIState {Idle, Chaising, Attacking, Death};
 
     [SerializeField] AIState aiState = AIState.Idle;
+
+    [SerializeField] Animator anim;
 
     void Start()
     {
@@ -38,6 +41,7 @@ public class EnemyAI : MonoBehaviour
                     if (dist < distThreshold)
                     {
                         aiState = AIState.Chaising;
+                        anim.SetBool("Chaising", true);
                     }
                     Agent.SetDestination(transform.position);
                     break;
@@ -45,14 +49,40 @@ public class EnemyAI : MonoBehaviour
                     dist = Vector3.Distance(target.position, transform.position);
                     if (dist > distThreshold)
                     {
-                        aiState = AIState.Idle; 
+                        aiState = AIState.Idle;
+                        anim.SetBool("Chaising", false);
+
+                    }
+                    if (dist < AttThreshold)
+                    {
+                        aiState = AIState.Attacking;
+                        anim.SetBool("Attack", true);
+
+
                     }
                     Agent.SetDestination(target.position);
                     break;
+                case AIState.Attacking:
+                    Debug.Log("Attack");
+                    Agent.SetDestination(transform.position);
+                    dist = Vector3.Distance(target.position, transform.position);
+                    if (dist > AttThreshold)
+                    {
+                        aiState = AIState.Chaising;
+                        anim.SetBool("Attack", false);
+
+                    }
+                    break;
+                case AIState.Death:
+                    break;
+                //case AIState.Walking:
+                //    break;
+                //case AIState.Running:
+                //    break;
                 default:
                     break;
             }
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.2f);
         }
     }
 }
