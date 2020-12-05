@@ -14,14 +14,14 @@ public class EnemyAI : MonoBehaviour
 
     private NavMeshAgent agent;
 
-    private Transform target;
+    [SerializeField] private Transform target;
 
     private Animator animator;
 
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-
+        animator = GetComponent<Animator>();
         StartCoroutine(States());
     }
 
