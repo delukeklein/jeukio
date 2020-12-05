@@ -18,18 +18,27 @@ public class EnemyAI : MonoBehaviour
 
     private Animator animator;
 
+
+
+    //=====
+
+    [SerializeField] uint dmg;
+    float lastAttackTime = 0;
+    float attackCooldown = 1; 
+
+
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         StartCoroutine(States());
     }
-
     private void Update()
     {
-        
-    }
+        Debug.Log(lastAttackTime);
+        Debug.Log(attackCooldown);
 
+    }
     IEnumerator States()
     {
         while (true)
@@ -52,34 +61,36 @@ public class EnemyAI : MonoBehaviour
                     {
                         state = AIState.Idle;
                         animator.SetBool("Chaising", false);
-
                     }
                     if (dist < attackThreshold)
                     {
                         state = AIState.Attacking;
                         animator.SetBool("Attack", true);
 
-
+                        //if (lastAttackTime < attackCooldown)
+                        //{
+                        //    animator.SetBool("Attack", true);
+                        //}
                     }
                     agent.SetDestination(target.position);
                     break;
                 case AIState.Attacking:
                     Debug.Log("Attack");
+                    if (Time.time - lastAttackTime > attackCooldown)
+                    {
+                        lastAttackTime = Time.time;
+                        target.GetComponent<Health>().Reduce(dmg);
+                    }
                     agent.SetDestination(transform.position);
                     dist = Vector3.Distance(target.position, transform.position);
                     if (dist > attackThreshold)
                     {
                         state = AIState.Chaising;
                         animator.SetBool("Attack", false);
-
                     }
                     break;
                 case AIState.Death:
                     break;
-                //case AIState.Walking:
-                //    break;
-                //case AIState.Running:
-                //    break;
                 default:
                     break;
             }

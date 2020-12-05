@@ -2,7 +2,7 @@
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private int health;
+    [SerializeField] public int health;
 
     [SerializeField] private int maxHealth;
 

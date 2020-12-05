@@ -55,6 +55,10 @@ namespace FPSControllerLPFP
 
         [Tooltip("The names of the axes and buttons for Unity's Input Manager."), SerializeField]
         private FpsInput input;
+
+
+       [SerializeField] Health health;
+        
 #pragma warning restore 649
 
         private Rigidbody _rigidbody;
@@ -85,6 +89,8 @@ namespace FPSControllerLPFP
             _velocityZ = new SmoothVelocity();
             Cursor.lockState = CursorLockMode.Locked;
             ValidateRotationRestriction();
+
+            health.GetComponent<Health>();
         }
 			
         private Transform AssignCharactersCamera()
@@ -147,6 +153,11 @@ namespace FPSControllerLPFP
 			arms.position = transform.position + transform.TransformVector(armPosition);
             Jump();
             PlayFootstepSounds();
+
+            if (health.health == 0)
+            {
+                Debug.Log("Death");
+            }
         }
 
         private void RotateCameraAndCharacter()
