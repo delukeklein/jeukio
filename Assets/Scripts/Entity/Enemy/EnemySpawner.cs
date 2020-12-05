@@ -21,23 +21,31 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
-        foreach (EnemyAI enemyPrefab in enemyPrefabs)
-        {
-            enemyPrefab.setTarget(playerController);
-        }
-
         StartCoroutine(SpawnZombiesRoutine());
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position, new Vector3(width, 0f, depth));
+        Gizmos.DrawWireCube(transform.position, new Vector3(width, transform.position.y, depth));
     }
 
     private void SpawnZombies()
     {
-        Debug.LogError("NEEF");
+        int zombies = Random.Range(minSpawn, maxSpawn);
+
+        for (int i = 0; i < zombies; i++)
+        {
+            float x = Random.Range(transform.position.x - width / 2, transform.position.x + width / 2);
+            float z = Random.Range(transform.position.z - depth / 2, transform.position.z + depth / 2);
+
+            int enemyIndex = Random.Range(0, enemyPrefabs.Length);
+
+            EnemyAI enemy = Instantiate(enemyPrefabs[enemyIndex]);
+            enemy.setTarget(playerController);
+
+            enemy.transform.position = new Vector3(x, transform.position.y, z);
+        }
     }
 
     private IEnumerator SpawnZombiesRoutine()
@@ -49,5 +57,4 @@ public class EnemySpawner : MonoBehaviour
             yield return new WaitForSeconds(spawnRate);
         }
     }
-
 }
