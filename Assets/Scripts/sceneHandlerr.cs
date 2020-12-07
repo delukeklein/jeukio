@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class sceneHandler : MonoBehaviour
+public class sceneHandlerr : MonoBehaviour
 {
     [Header("Scene Name")]
     public string sceneName = "";
