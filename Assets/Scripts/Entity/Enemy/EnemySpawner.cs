@@ -10,12 +10,14 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private FpsControllerLPFP playerController;
 
     [Header("Settings")]
-    [SerializeField] private uint minSpawn;
-    [SerializeField] private uint maxSpawn;
+    [SerializeField] private int minSpawn;
+    [SerializeField] private int maxSpawn;
 
     [SerializeField] private float width;
     [SerializeField] private float depth;
     [SerializeField] private float spawnRate;
+
+    public bool IsEnabled { get; set; } = true;
 
     private void Start()
     {
@@ -25,35 +27,34 @@ public class EnemySpawner : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.matrix = RotationMatrix;
-        Gizmos.DrawWireCube(Vector3.zero, new Vector3(width, 0, depth));
+        Gizmos.DrawWireCube(transform.position, new Vector3(width, transform.position.y, depth));
     }
 
     private void SpawnZombies()
     {
-        int zombies = Random.Range((int)minSpawn, (int)maxSpawn);
+        int zombies = Random.Range(minSpawn, maxSpawn);
 
         for (int i = 0; i < zombies; i++)
         {
-            Vector3 randomPosition = new Vector3(Random.Range(width / 2, width / 2), 0, Random.Range(depth / 2, depth / 2));
+            float x = Random.Range(transform.position.x - width / 2, transform.position.x + width / 2);
+            float z = Random.Range(transform.position.z - depth / 2, transform.position.z + depth / 2);
 
-            EnemyAI enemy = Instantiate(RandomEnemy);
+            int enemyIndex = Random.Range(0, enemyPrefabs.Length);
 
+            EnemyAI enemy = Instantiate(enemyPrefabs[enemyIndex]);
             enemy.setTarget(playerController);
-            enemy.transform.position = RotationMatrix.MultiplyVector(randomPosition) + transform.position;
+
+            enemy.transform.position = new Vector3(x, transform.position.y, z);
         }
     }
+
     private IEnumerator SpawnZombiesRoutine()
     {
-        while (isActiveAndEnabled)
+        while (IsEnabled)
         {
             SpawnZombies();
 
             yield return new WaitForSeconds(spawnRate);
         }
     }
-
-    private EnemyAI RandomEnemy => enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
-
-    private Matrix4x4 RotationMatrix => Matrix4x4.TRS(transform.position, transform.rotation, transform.lossyScale);
 }

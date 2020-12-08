@@ -4,13 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(Animator), typeof(NavMeshAgent))]
+[RequireComponent(typeof(Animator))]
 public class EnemyAI : MonoBehaviour
 {
-
-    private const float attackCooldown = 1;
-
-
     [SerializeField] private float distanceThreshold = 10f;
     [SerializeField] private float attackThreshold = 1.5f; 
 
@@ -22,11 +18,14 @@ public class EnemyAI : MonoBehaviour
 
     private Animator animator;
 
+
+
     //=====
 
-    [SerializeField] private uint dmg;
+    [SerializeField] uint dmg;
+    float lastAttackTime = 0;
+    float attackCooldown = 1; 
 
-    private float lastAttackTime = 0;
 
     private void Start()
     {
@@ -34,7 +33,6 @@ public class EnemyAI : MonoBehaviour
         animator = GetComponent<Animator>();
         StartCoroutine(States());
     }
-
     private void Update()
     {
         Debug.Log(lastAttackTime);
