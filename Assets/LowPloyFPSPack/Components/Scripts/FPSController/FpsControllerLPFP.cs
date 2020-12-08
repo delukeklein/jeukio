@@ -57,7 +57,7 @@ namespace FPSControllerLPFP
         private FpsInput input;
 
 
-       [SerializeField] Health health;
+       [SerializeField] private Health health;
         
 #pragma warning restore 649
 
