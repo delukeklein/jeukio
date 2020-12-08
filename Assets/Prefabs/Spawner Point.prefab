@@ -44,14 +44,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 806929110401104006, guid: 56d2679b47941e94d9c547df2508aee6, type: 3}
-  - {fileID: 806929110401104006, guid: 56d2679b47941e94d9c547df2508aee6, type: 3}
-  - {fileID: 806929110401104006, guid: 56d2679b47941e94d9c547df2508aee6, type: 3}
-  - {fileID: 806929110401104006, guid: 56d2679b47941e94d9c547df2508aee6, type: 3}
-  - {fileID: 806929110401104006, guid: 56d2679b47941e94d9c547df2508aee6, type: 3}
+  - {fileID: 8673799573401695629, guid: 1a28f5f032159ec44a777139581643e4, type: 3}
   playerController: {fileID: 0}
-  minSpawn: 0
-  maxSpawn: 0
-  width: 5.02
-  depth: 10.22
-  spawnRate: 4
+  minSpawn: 6
+  maxSpawn: 9
+  detectionRadius: 7.25
+  width: 5
+  depth: 5
+  spawnRate: 10

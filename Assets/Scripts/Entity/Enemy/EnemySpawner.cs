@@ -13,20 +13,32 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private uint minSpawn;
     [SerializeField] private uint maxSpawn;
 
+    [SerializeField] private float detectionRadius;
     [SerializeField] private float width;
     [SerializeField] private float depth;
     [SerializeField] private float spawnRate;
+
+    public bool IsPlayerInRange { get; private set; }
 
     private void Start()
     {
         StartCoroutine(SpawnZombiesRoutine());
     }
 
+    private void Update()
+    {
+        IsPlayerInRange = Vector3.Distance(transform.position, playerController.transform.position) <= detectionRadius;
+    }
+
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
         Gizmos.matrix = RotationMatrix;
+
+        Gizmos.color = Color.red;
         Gizmos.DrawWireCube(Vector3.zero, new Vector3(width, 0, depth));
+
+        Gizmos.color = new Color(0f, 1f, 0f, 0.33f);
+        Gizmos.DrawSphere(Vector3.zero, detectionRadius);
     }
 
     private void SpawnZombies()
@@ -45,7 +57,7 @@ public class EnemySpawner : MonoBehaviour
     }
     private IEnumerator SpawnZombiesRoutine()
     {
-        while (isActiveAndEnabled)
+        while (isActiveAndEnabled && IsPlayerInRange)
         {
             SpawnZombies();
 
