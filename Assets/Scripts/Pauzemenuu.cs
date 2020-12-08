@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pauzemenu : MonoBehaviour
+public class Pauzemenuu : MonoBehaviour
 {
     public bool gameisPaused = false;
 
-    public Camera CS;
+    //public Camera CS;
     public GameObject PM;
     public GameObject DeathScreen;
 
@@ -35,7 +35,7 @@ public class Pauzemenu : MonoBehaviour
         {
             PM.SetActive(true);
 
-            CS.enabled = false;
+           // CS.enabled = false;
         }
     }
 
@@ -48,7 +48,7 @@ public class Pauzemenu : MonoBehaviour
         if (gameisPaused == false)
         {
             PM.SetActive(false);
-            CS.enabled = true;
+           // CS.enabled = true;
         }
     }
 
