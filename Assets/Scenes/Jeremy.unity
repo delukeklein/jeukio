@@ -363,7 +363,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5441207590408427087, guid: ec8e13edea53ccf49989115581a58d83, type: 3}
       propertyPath: m_Intensity
-      value: 3.3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5441207590408427087, guid: ec8e13edea53ccf49989115581a58d83, type: 3}
       propertyPath: m_BoundingSphereOverride.w
