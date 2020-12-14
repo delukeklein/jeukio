@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
 public class Pauzemenuu : MonoBehaviour
 {
     public bool gameisPaused = false;
 
-    public FpsControllerLPFP PC;
+
     public GameObject PM;
     public GameObject DeathScreen;
 
@@ -43,14 +41,12 @@ public class Pauzemenuu : MonoBehaviour
         {
             PM.SetActive(true);
 
-            PC.enabled = false;
-
             //Playeroff.SetActive(false);
 
-            //foreach (var component in disableComponents)
-            //{
-            //    component.enabled = false;
-            //}
+            foreach (var component in disableComponents)
+            {
+                component.enabled = false;
+            }
         }
     }
 
@@ -64,15 +60,13 @@ public class Pauzemenuu : MonoBehaviour
         {
             PM.SetActive(false);
 
-            PC.enabled = true;
-
             // Playeroff.SetActive(true);
 
 
-            //foreach (var component in disableComponents)
-            //{
-            //    component.enabled = true;
-            //}
+            foreach (var component in disableComponents)
+            {
+                component.enabled = true;
+            }
         }
     }
 
@@ -80,5 +74,6 @@ public class Pauzemenuu : MonoBehaviour
     {
         DeathScreen.SetActive(true);
         Cursor.visible = true;
+        print("Death");
     }
 }

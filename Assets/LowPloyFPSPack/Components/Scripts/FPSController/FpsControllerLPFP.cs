@@ -57,6 +57,7 @@ using UnityEngine;
 
 
        [SerializeField] private Health health;
+       [SerializeField] private Pauzemenuu PM;
         
 #pragma warning restore 649
 
@@ -155,7 +156,7 @@ using UnityEngine;
 
             if (health.health == 0)
             {
-                
+             PM.death();
             }
         }
 
