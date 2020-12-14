@@ -15,6 +15,8 @@ public class UI : MonoBehaviour
     public Toggle FPSToggle;
 
 
+    [SerializeField] private Component[] components;
+
   
     public void Settings()
     {
