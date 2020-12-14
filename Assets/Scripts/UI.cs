@@ -14,20 +14,13 @@ public class UI : MonoBehaviour
     public bool ShowSettings = false;
     public Toggle FPSToggle;
 
-    [Header("Disable Components")]
-    [SerializeField] private MonoBehaviour[] disableComponents;
+    
 
     public void Settings()
     {
         ShowSettings = true;
 
         set.SetActive(true);
-
-        foreach (var component in disableComponents)
-        {
-            component.enabled = false;
-        }
-
     }
     public void FPS()
     {
@@ -39,11 +32,6 @@ public class UI : MonoBehaviour
         ShowSettings = false;
 
         set.SetActive(false);
-
-        foreach (var component in disableComponents)
-        {
-            component.enabled = true;
-        }
     }
 
     public void Quit()

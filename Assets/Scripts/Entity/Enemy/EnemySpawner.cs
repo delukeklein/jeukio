@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-using FPSControllerLPFP;
+
 using System.Collections;
 
 public class EnemySpawner : MonoBehaviour

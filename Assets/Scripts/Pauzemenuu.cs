@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class Pauzemenuu : MonoBehaviour
 {
     public bool gameisPaused = false;
 
-    //public Camera CS;
+    public FpsControllerLPFP PC;
     public GameObject PM;
     public GameObject DeathScreen;
+
+    [Header("Disable Components")]
+    // [SerializeField] GameObject Playeroff;
+    [SerializeField] private MonoBehaviour[] disableComponents;
 
     void Update()
     {
@@ -21,6 +27,8 @@ public class Pauzemenuu : MonoBehaviour
             else
             {
                 Pause();
+
+               
             }
         }
     }
@@ -35,7 +43,14 @@ public class Pauzemenuu : MonoBehaviour
         {
             PM.SetActive(true);
 
-           // CS.enabled = false;
+            PC.enabled = false;
+
+            //Playeroff.SetActive(false);
+
+            //foreach (var component in disableComponents)
+            //{
+            //    component.enabled = false;
+            //}
         }
     }
 
@@ -48,7 +63,16 @@ public class Pauzemenuu : MonoBehaviour
         if (gameisPaused == false)
         {
             PM.SetActive(false);
-           // CS.enabled = true;
+
+            PC.enabled = true;
+
+            // Playeroff.SetActive(true);
+
+
+            //foreach (var component in disableComponents)
+            //{
+            //    component.enabled = true;
+            //}
         }
     }
 

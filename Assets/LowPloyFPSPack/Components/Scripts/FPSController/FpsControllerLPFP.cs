@@ -2,8 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace FPSControllerLPFP
-{
+
     /// Manages a first person character
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(CapsuleCollider))]
@@ -156,7 +155,7 @@ namespace FPSControllerLPFP
 
             if (health.health == 0)
             {
-                Debug.Log("Death");
+                
             }
         }
 
@@ -388,4 +387,3 @@ namespace FPSControllerLPFP
             }
         }
     }
-}
