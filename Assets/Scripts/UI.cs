@@ -14,35 +14,35 @@ public class UI : MonoBehaviour
     public bool ShowSettings = false;
     public Toggle FPSToggle;
 
+    [Header("Disable Components")]
+    [SerializeField] private MonoBehaviour[] disableComponents;
 
-    [SerializeField] private Component[] components;
-
-  
     public void Settings()
     {
         ShowSettings = true;
-        if (ShowSettings == true)
+
+        set.SetActive(true);
+
+        foreach (var component in disableComponents)
         {
-            set.SetActive(true);
+            component.enabled = false;
         }
+
     }
     public void FPS()
     {
-        if(FPSToggle.isOn == true)
-        {
-            FPSCounter.SetActive(true);
-        }
-        else if (FPSToggle.isOn == false)
-        {
-            FPSCounter.SetActive(false);
-        }
+        FPSCounter.SetActive(FPSToggle.isOn);
     }
+
     public void Close()
     {
         ShowSettings = false;
-        if (ShowSettings == false)
+
+        set.SetActive(false);
+
+        foreach (var component in disableComponents)
         {
-            set.SetActive(false);
+            component.enabled = true;
         }
     }
 
@@ -51,8 +51,4 @@ public class UI : MonoBehaviour
         Application.Quit();
         print("quit");
     }
-
-
-    
-   
 }
