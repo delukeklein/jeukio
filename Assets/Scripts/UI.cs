@@ -51,8 +51,4 @@ public class UI : MonoBehaviour
         Application.Quit();
         print("quit");
     }
-
-
-
-
 }
