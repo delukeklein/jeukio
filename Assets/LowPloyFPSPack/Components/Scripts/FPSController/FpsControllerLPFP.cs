@@ -90,7 +90,7 @@ namespace FPSControllerLPFP
             Cursor.lockState = CursorLockMode.Locked;
             ValidateRotationRestriction();
 
-            health.GetComponent<Health>();
+            health = GetComponent<Health>();
         }
 			
         private Transform AssignCharactersCamera()
