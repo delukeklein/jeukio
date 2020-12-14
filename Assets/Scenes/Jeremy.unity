@@ -794,6 +794,7 @@ MonoBehaviour:
   FPSCounter: {fileID: 617973101903261056}
   ShowSettings: 0
   FPSToggle: {fileID: 1450846148225681129}
+  components: []
 --- !u!224 &1450846148225681143
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1352,6 +1353,7 @@ MonoBehaviour:
   FPSCounter: {fileID: 0}
   ShowSettings: 0
   FPSToggle: {fileID: 0}
+  components: []
 --- !u!222 &1639874104488965504
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15018,19 +15020,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5441207590408427087, guid: ec8e13edea53ccf49989115581a58d83, type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 7.2064716e+31
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5441207590408427087, guid: ec8e13edea53ccf49989115581a58d83, type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 2.331033e+20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5441207590408427087, guid: ec8e13edea53ccf49989115581a58d83, type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 0.00000003735693
+      value: 2.3418e-41
       objectReference: {fileID: 0}
     - target: {fileID: 5441207590408427087, guid: ec8e13edea53ccf49989115581a58d83, type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 7.499231e+28
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5441207590408427440, guid: ec8e13edea53ccf49989115581a58d83, type: 3}
       propertyPath: m_Name
@@ -15252,6 +15254,7 @@ MonoBehaviour:
   FPSCounter: {fileID: 0}
   ShowSettings: 0
   FPSToggle: {fileID: 0}
+  components: []
 --- !u!114 &7955922469747726447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15811,6 +15814,9 @@ MonoBehaviour:
   FPSCounter: {fileID: 617973101903261056}
   ShowSettings: 0
   FPSToggle: {fileID: 0}
+  components:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &8145911064008574426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16391,6 +16397,7 @@ MonoBehaviour:
   FPSCounter: {fileID: 0}
   ShowSettings: 0
   FPSToggle: {fileID: 0}
+  components: []
 --- !u!114 &8145911064255333642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17107,3 +17114,4 @@ MonoBehaviour:
   FPSCounter: {fileID: 0}
   ShowSettings: 0
   FPSToggle: {fileID: 0}
+  components: []
