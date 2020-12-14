@@ -47,7 +47,7 @@ public class EnemySpawner : MonoBehaviour
 
         for (int i = 0; i < zombies; i++)
         {
-            Vector3 randomPosition = new Vector3(Random.Range(width / 2, width / 2), 0, Random.Range(depth / 2, depth / 2));
+            Vector3 randomPosition = new Vector3(Random.Range(-width / 2, width / 2), 0, Random.Range(-depth / 2, depth / 2));
 
             EnemyAI enemy = Instantiate(RandomEnemy);
 
@@ -57,9 +57,12 @@ public class EnemySpawner : MonoBehaviour
     }
     private IEnumerator SpawnZombiesRoutine()
     {
-        while (isActiveAndEnabled && IsPlayerInRange)
+        while(true)
         {
-            SpawnZombies();
+            if (IsPlayerInRange)
+            {
+                SpawnZombies();
+            }
 
             yield return new WaitForSeconds(spawnRate);
         }
