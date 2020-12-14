@@ -14385,6 +14385,7 @@ MonoBehaviour:
     run: Fire3
     jump: Jump
   health: {fileID: 7022829954982416094}
+  pauzemenuu: {fileID: 4898261980111265106}
 --- !u!1 &3284075793873053418
 GameObject:
   m_ObjectHideFlags: 0
@@ -14916,9 +14917,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameisPaused: 0
-  PM: {fileID: 0}
+  PC: {fileID: 3284075793873053417}
+  PM: {fileID: 8145911064830979134}
   DeathScreen: {fileID: 1639874104593406169}
-  Playeroff: {fileID: 3284075793873053418}
+  health: {fileID: 7022829954982416094}
+  disableComponents: []
 --- !u!1 &4898261980111265107
 GameObject:
   m_ObjectHideFlags: 0

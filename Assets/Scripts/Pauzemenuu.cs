@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Pauzemenuu : MonoBehaviour
 {
@@ -11,6 +8,10 @@ public class Pauzemenuu : MonoBehaviour
     public FpsControllerLPFP PC;
     public GameObject PM;
     public GameObject DeathScreen;
+
+    [SerializeField] private Health health;
+
+    private bool isDead = false;
 
     [Header("Disable Components")]
     // [SerializeField] GameObject Playeroff;
@@ -27,9 +28,14 @@ public class Pauzemenuu : MonoBehaviour
             else
             {
                 Pause();
-
-               
             }
+        }
+
+        if (health.health <= 0 && !isDead)
+        {
+            death();
+
+            isDead = true;
         }
     }
 
@@ -41,7 +47,7 @@ public class Pauzemenuu : MonoBehaviour
 
         if (gameisPaused == true)
         {
-            PM.SetActive(true);
+            PM?.SetActive(true);
 
             PC.enabled = false;
 
@@ -62,7 +68,7 @@ public class Pauzemenuu : MonoBehaviour
 
         if (gameisPaused == false)
         {
-            PM.SetActive(false);
+            PM?.SetActive(false);
 
             PC.enabled = true;
 
@@ -78,7 +84,6 @@ public class Pauzemenuu : MonoBehaviour
 
     public void death()
     {
-        DeathScreen.SetActive(true);
-        Cursor.visible = true;
+        SceneManager.LoadScene(2, LoadSceneMode.Single);
     }
 }
