@@ -10,6 +10,7 @@ public class EnemyAI : MonoBehaviour
     private const float attackCooldown = 1;
 
 
+
     [SerializeField] private float distanceThreshold = 10f;
     [SerializeField] private float attackThreshold = 1.5f; 
 

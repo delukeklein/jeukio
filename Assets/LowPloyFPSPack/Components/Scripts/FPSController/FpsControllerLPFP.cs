@@ -56,11 +56,6 @@ public class FpsControllerLPFP : MonoBehaviour
     [Tooltip("The names of the axes and buttons for Unity's Input Manager."), SerializeField]
     private FpsInput input;
 
-
-    [SerializeField] private Health health;
-
-    [SerializeField] private Pauzemenuu pauzemenuu;
-
 #pragma warning restore 649
 
     private Rigidbody _rigidbody;
@@ -92,7 +87,6 @@ public class FpsControllerLPFP : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         ValidateRotationRestriction();
 
-        health = GetComponent<Health>();
     }
 
     private Transform AssignCharactersCamera()

@@ -43,7 +43,8 @@ public class Pauzemenuu : MonoBehaviour
     {
         gameisPaused = true;
         Time.timeScale = 0f;
-        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+
 
         if (gameisPaused == true)
         {
