@@ -51,13 +51,6 @@ public class Pauzemenuu : MonoBehaviour
             PM?.SetActive(true);
 
             PC.enabled = false;
-
-            //Playeroff.SetActive(false);
-
-            //foreach (var component in disableComponents)
-            //{
-            //    component.enabled = false;
-            //}
         }
     }
 
@@ -72,14 +65,6 @@ public class Pauzemenuu : MonoBehaviour
             PM?.SetActive(false);
 
             PC.enabled = true;
-
-            // Playeroff.SetActive(true);
-
-
-            //foreach (var component in disableComponents)
-            //{
-            //    component.enabled = true;
-            //}
         }
     }
 

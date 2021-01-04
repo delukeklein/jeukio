@@ -366,7 +366,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1236871604
 GameObject:
@@ -1774,6 +1774,71 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aba66c524eddd3f4291f1a642ffbe101, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &2106372960990868766
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2106372960898251510, guid: 5801e9eeb7cfdda45817a81b11b19301, type: 3}
+      propertyPath: MusicSource
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106372960898251510, guid: 5801e9eeb7cfdda45817a81b11b19301, type: 3}
+      propertyPath: EffectsSource
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106372960898251511, guid: 5801e9eeb7cfdda45817a81b11b19301, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106372960898251511, guid: 5801e9eeb7cfdda45817a81b11b19301, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 948.8008
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106372960898251511, guid: 5801e9eeb7cfdda45817a81b11b19301, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 539.99506
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106372960898251511, guid: 5801e9eeb7cfdda45817a81b11b19301, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -13.492915
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106372960898251511, guid: 5801e9eeb7cfdda45817a81b11b19301, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106372960898251511, guid: 5801e9eeb7cfdda45817a81b11b19301, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106372960898251511, guid: 5801e9eeb7cfdda45817a81b11b19301, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106372960898251511, guid: 5801e9eeb7cfdda45817a81b11b19301, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106372960898251511, guid: 5801e9eeb7cfdda45817a81b11b19301, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106372960898251511, guid: 5801e9eeb7cfdda45817a81b11b19301, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106372960898251511, guid: 5801e9eeb7cfdda45817a81b11b19301, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106372960898251513, guid: 5801e9eeb7cfdda45817a81b11b19301, type: 3}
+      propertyPath: m_Name
+      value: MuziekManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5801e9eeb7cfdda45817a81b11b19301, type: 3}
 --- !u!114 &2597676952191512184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16425,7 +16490,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &8145911064830979134
 GameObject:
   m_ObjectHideFlags: 0
@@ -16546,13 +16611,27 @@ GameObject:
   m_Component:
   - component: {fileID: 8145911064984353946}
   - component: {fileID: 8145911064984353947}
+  - component: {fileID: 8145911064984353950}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
+--- !u!114 &8145911064984353950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8145911064984353949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79bb1601f48c1974fb721101eeabcf11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 8145911064984353947}
 --- !u!224 &8646414898414272898
 RectTransform:
   m_ObjectHideFlags: 0
