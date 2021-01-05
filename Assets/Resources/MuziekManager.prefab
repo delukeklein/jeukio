@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7611346940599959549}
   - component: {fileID: 7611346940599959550}
   m_Layer: 0
-  m_Name: MusicMan
+  m_Name: MuziekManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,8 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MusicSource: {fileID: 7611346940599959549}
-  EffectsSource: {fileID: 7611346940599959550}
-  Music: {fileID: 8300000, guid: 3c2580eab7b198a46a7b3120116345fd, type: 3}
+  Music: {fileID: 8300000, guid: 08eebd2ee6b7a3c4c80e173a855be84b, type: 3}
 --- !u!82 &7611346940599959549
 AudioSource:
   m_ObjectHideFlags: 0
@@ -62,7 +61,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
