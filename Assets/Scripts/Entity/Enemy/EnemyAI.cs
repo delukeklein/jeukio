@@ -37,8 +37,8 @@ public class EnemyAI : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(lastAttackTime);
-        Debug.Log(attackCooldown);
+        //Debug.Log(lastAttackTime);
+        //Debug.Log(attackCooldown);
 
     }
     IEnumerator States()

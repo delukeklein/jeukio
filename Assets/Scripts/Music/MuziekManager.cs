@@ -9,7 +9,7 @@ public class MuziekManager : MonoBehaviour
 
 
     public AudioSource MusicSource;
-    public AudioSource EffectsSource;
+    //public AudioSource EffectsSource;
 
     public AudioClip Music;
 
@@ -37,11 +37,11 @@ public class MuziekManager : MonoBehaviour
         Instantiate(Resources.Load<MuziekManager>("MuziekManager"));
     }
 
-    public void Play(AudioClip clip)
-    {
-        EffectsSource.clip = clip;
-        EffectsSource.Play();
-    }
+    //public void Play(AudioClip clip)
+    //{
+    //    EffectsSource.clip = clip;
+    //    EffectsSource.Play();
+    //}
 
     public void PlayMusic(AudioClip music)
     {
