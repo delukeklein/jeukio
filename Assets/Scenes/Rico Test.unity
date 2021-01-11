@@ -13722,7 +13722,6 @@ MonoBehaviour:
     strafe: Vertical
     run: Fire3
     jump: Jump
-  health: {fileID: 8250868654542570029}
 --- !u!82 &4496143262953400859
 AudioSource:
   m_ObjectHideFlags: 0
@@ -14458,6 +14457,10 @@ PrefabInstance:
     - target: {fileID: 8673799573401695636, guid: 1a28f5f032159ec44a777139581643e4, type: 3}
       propertyPath: m_Name
       value: Zombie1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673799573401695636, guid: 1a28f5f032159ec44a777139581643e4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a28f5f032159ec44a777139581643e4, type: 3}

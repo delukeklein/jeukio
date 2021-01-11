@@ -43,14 +43,6 @@ public class EnemyAI : MonoBehaviour
 
     private void Update()
     {
-<<<<<<< Updated upstream
-        //Debug.Log(lastAttackTime);
-        //Debug.Log(attackCooldown);
-=======
-        Debug.Log(lastAttackTime);
-        Debug.Log(AttackCooldown);
->>>>>>> Stashed changes
-
         if(intervalTimer.Check(Time.deltaTime))
         {
             switch (state)
