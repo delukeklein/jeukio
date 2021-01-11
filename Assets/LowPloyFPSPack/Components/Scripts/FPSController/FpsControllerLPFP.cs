@@ -1,7 +1,9 @@
-﻿using System;
-using System.Linq;
-using UnityEngine;
+﻿using DesertStormZombies.Entity;
 
+using System;
+using System.Linq;
+
+using UnityEngine;
 
 /// Manages a first person character
 [RequireComponent(typeof(Rigidbody))]

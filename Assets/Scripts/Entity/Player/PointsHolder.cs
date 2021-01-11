@@ -1,18 +1,23 @@
 ﻿using UnityEngine;
 
-public class PointsHolder : MonoBehaviour
+namespace DesertStormZombies.Entity.Player
 {
-    private int points;
-
-    public static PointsHolder operator +(PointsHolder pointHolder, int a)
+    public class PointsHolder : MonoBehaviour
     {
-        pointHolder.points += a;
-        return pointHolder;
-    }
+        private int points;
 
-    public static PointsHolder operator -(PointsHolder pointHolder, int a)
-    {
-        pointHolder.points -= a;
-        return pointHolder;
+        public int Amount => points;
+
+        public static PointsHolder operator +(PointsHolder pointHolder, int a)
+        {
+            pointHolder.points += a;
+            return pointHolder;
+        }
+
+        public static PointsHolder operator -(PointsHolder pointHolder, int a)
+        {
+            pointHolder.points -= a;
+            return pointHolder;
+        }
     }
 }

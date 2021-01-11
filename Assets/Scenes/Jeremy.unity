@@ -123,6 +123,67 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: e0cdba61a0eb70e40951ef3bdb910bd9, type: 2}
+--- !u!1 &112081226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 112081229}
+  - component: {fileID: 112081228}
+  - component: {fileID: 112081227}
+  m_Layer: 0
+  m_Name: Obstacle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &112081227
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112081226}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &112081228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112081226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6caa0a3b8417cb4896dd9c46ce72e8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsCost: 30
+  minimumWave: 3
+  speed: 300
+  destination: {x: 0, y: 0, z: 0}
+--- !u!4 &112081229
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112081226}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &520325628
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,7 +345,7 @@ MonoBehaviour:
   playerController: {fileID: 3284075793873053417}
   minSpawn: 1
   maxSpawn: 3
-  detectionRadius: 12.01
+  detectionRadius: 12
   width: 12
   depth: 10
   spawnRate: 5
@@ -402,7 +463,7 @@ MonoBehaviour:
   playerController: {fileID: 3284075793873053417}
   minSpawn: 1
   maxSpawn: 3
-  detectionRadius: 12.01
+  detectionRadius: 12
   width: 12
   depth: 10
   spawnRate: 5
@@ -529,7 +590,7 @@ MonoBehaviour:
   playerController: {fileID: 3284075793873053417}
   minSpawn: 1
   maxSpawn: 3
-  detectionRadius: 12.01
+  detectionRadius: 12
   width: 12
   depth: 10
   spawnRate: 5
@@ -581,7 +642,7 @@ MonoBehaviour:
   playerController: {fileID: 3284075793873053417}
   minSpawn: 1
   maxSpawn: 3
-  detectionRadius: 12.01
+  detectionRadius: 12
   width: 12
   depth: 10
   spawnRate: 5
@@ -14637,9 +14698,12 @@ GameObject:
   - component: {fileID: 3284075793873053422}
   - component: {fileID: 3284075793873053423}
   - component: {fileID: 3284075793873053416}
+  - component: {fileID: 3284075793873053419}
+  - component: {fileID: 3284075793873053424}
   - component: {fileID: 3284075793873053417}
   - component: {fileID: 7022829954982416094}
   - component: {fileID: 1774595150999042106}
+  - component: {fileID: 3284075793873053420}
   m_Layer: 8
   m_Name: Player Jeremy
   m_TagString: Player
@@ -14647,6 +14711,31 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &3284075793873053419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3284075793873053418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd6dc9a1d1558a498a85f9f00d38b05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3284075793873053420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3284075793873053418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60c1aeba7353b404683ee45a972260ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStatistics: {fileID: 0}
 --- !u!4 &3284075793873053421
 Transform:
   m_ObjectHideFlags: 0
@@ -14692,6 +14781,22 @@ CapsuleCollider:
   m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: -0.4, z: 0}
+--- !u!114 &3284075793873053424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3284075793873053418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd855bff1c8f268498626d5115ea4d26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 5
+  raycastEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!224 &3284075793916170656
 RectTransform:
   m_ObjectHideFlags: 0

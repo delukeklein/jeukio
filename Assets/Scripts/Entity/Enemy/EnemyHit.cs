@@ -1,31 +1,34 @@
-﻿using UnityEngine;
+﻿using DesertStormZombies.Entity.Player;
 
-[RequireComponent(typeof(Health))]
-public class EnemyHit : MonoBehaviour
+using UnityEngine;
+
+namespace DesertStormZombies.Entity.Enemy
 {
-    private Health health;
-
-    private PointsHolder pointsHolder;
-
-    private void OnEnable()
+    [RequireComponent(typeof(Health))]
+    public class EnemyHit : MonoBehaviour
     {
-        health = GetComponent<Health>();
-        pointsHolder = FindObjectOfType<PointsHolder>().GetComponent<PointsHolder>();
-    }
+        private Health health;
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        BulletScript bullet;
+        private PointsHolder pointsHolder;
 
-        if(collision.gameObject.TryGetComponent(out bullet))
+        private void OnEnable()
         {
-            pointsHolder += 10;
+            health = GetComponent<Health>();
+            pointsHolder = FindObjectOfType<PointsHolder>().GetComponent<PointsHolder>();
+        }
 
-            health.Reduce(25);
-
-            if(health.isDepleted)
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.TryGetComponent(out BulletScript bullet))
             {
-                Destroy(gameObject);
+                pointsHolder += 10;
+
+                health.Reduce(25);
+
+                if (health.isDepleted)
+                {
+                    Destroy(gameObject);
+                }
             }
         }
     }

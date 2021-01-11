@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using DesertStormZombies.Entity;
+
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Pauzemenuu : MonoBehaviour

@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
+
 using UnityEngine.UI;
 
 public class UI : MonoBehaviour
@@ -13,8 +11,6 @@ public class UI : MonoBehaviour
     [Header("Settings")]
     public bool ShowSettings = false;
     public Toggle FPSToggle;
-
-    
 
     public void Settings()
     {
