@@ -1,6 +1,6 @@
 ﻿namespace DesertStormZombies.Items
 {
-    interface Consumable
+    public interface Consumable
     {
         void Consume();
     }
