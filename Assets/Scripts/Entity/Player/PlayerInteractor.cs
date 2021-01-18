@@ -1,5 +1,5 @@
 ﻿using DesertStormZombies.Interaction;
-
+using TMPro;
 using UnityEngine;
 
 namespace DesertStormZombies.Entity.Player
@@ -7,6 +7,8 @@ namespace DesertStormZombies.Entity.Player
     public class PlayerInteractor : MonoBehaviour
     {
         [SerializeField] private float distance;
+
+        [SerializeField] private TextMeshProUGUI text;
 
         private Interactable interactable;
 
@@ -23,11 +25,20 @@ namespace DesertStormZombies.Entity.Player
                     interactable.Interact(this);
                 }
             }
+            else
+            {
+                SetText(string.Empty);
+            }
         }
 
         private void FixedUpdate()
         {
             interactable = Physics.Raycast(InteractionRay, out RaycastHit hit, distance) ? hit.collider.GetComponent<Interactable>() : null;
+        }
+
+        public void SetText(string text)
+        {
+            this.text.text = text;
         }
     }
 }
