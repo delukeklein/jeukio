@@ -1,5 +1,7 @@
 ﻿using DesertStormZombies.Items;
+
 using System;
+
 using UnityEngine;
 
 namespace DesertStormZombies.Entity.Player
@@ -10,8 +12,8 @@ namespace DesertStormZombies.Entity.Player
         public Consumable PrimaryConsumable;
         public Consumable SecondaryConsumable;
 
-        public Gun Primary;
-        public Gun Secondary;
+        public WeaponData Primary;
+        public WeaponData Secondary;
         public Knife Knife;
 
         public bool HasPrimaryConsumable => PrimaryConsumable != null;
@@ -32,50 +34,5 @@ namespace DesertStormZombies.Entity.Player
         public bool IsKnifePressed => Input.GetKeyDown(KnifeKey);
         public bool IsPrimaryConsumablePressed => Input.GetKeyDown(PrimaryConsumableKey);
         public bool IsSecondaryConsumablePressed => Input.GetKeyDown(SecondaryConsumableKey);
-    }
-
-    public class PlayerInventory : MonoBehaviour
-    {
-        [SerializeField] private Inventory inventory;
-
-        [SerializeField] private InventoryInput input;
-
-        private Weapon equipped;
-
-        void Update()
-        {
-            if (input.IsPrimaryPressed)
-            {
-                equipped = inventory.Primary;
-            }
-            else if (input.IsSecondaryPressed)
-            {
-                equipped = inventory.Secondary;
-            }
-            else if (input.IsKnifePressed)
-            {
-                equipped = inventory.Knife;
-            }
-            else if (input.IsPrimaryConsumablePressed && !inventory.HasPrimaryConsumable)
-            {
-                inventory.PrimaryConsumable.Consume();
-                inventory.PrimaryConsumable = null;
-            }
-            else if (input.IsSecondaryConsumablePressed && !inventory.HasSecondaryConsumable)
-            {
-                inventory.SecondaryConsumable.Consume();
-                inventory.SecondaryConsumable = null;
-            }
-
-            if(Input.GetMouseButton(0))
-            {
-                equipped.Attack();
-            }
-
-            if(Input.GetKeyDown(KeyCode.R) && equipped is Gun gun)
-            {
-                gun.Reload();
-            }
-        }
     }
 }
