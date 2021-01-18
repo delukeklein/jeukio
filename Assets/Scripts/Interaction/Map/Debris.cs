@@ -27,7 +27,7 @@ namespace DesertStormZombies.Interaction.Map
 
         public override void Focused(PlayerInteractor interactor)
         {
-            //UI;
+            interactor.SetText("Press E to interact\nCosts " + pointsCost + " points");
         }
 
         public override void Interact(PlayerInteractor interactor)
