@@ -2,19 +2,19 @@
 {
     public class IntervalTimer
     {
-        private readonly float interval;
+        public float Interval { get; set; }
 
         private float elapsed;
 
         public IntervalTimer(float interval)
         {
-            this.interval = interval;
+            this.Interval = interval;
         }
 
         public bool Check(float delteTime)
         {
-            elapsed = elapsed < interval ? elapsed + delteTime : 0;
-            return elapsed >= interval;
+            elapsed = elapsed < Interval ? elapsed + delteTime : 0;
+            return elapsed >= Interval;
         }
     }
 }

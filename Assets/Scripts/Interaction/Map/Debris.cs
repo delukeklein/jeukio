@@ -18,13 +18,6 @@ namespace DesertStormZombies.Interaction.Map
 
         public bool Unlocked { get; private set; }
 
-        protected override void Start()
-        {
-            base.Start();
-
-            startPosition = transform.position;
-        }
-
         public override void Focused(PlayerInteractor interactor)
         {
             interactor.SetText("Press E to interact\nCosts " + pointsCost + " points");
@@ -54,6 +47,13 @@ namespace DesertStormZombies.Interaction.Map
             transform.position = startPosition;
 
             Unlocked = false;
+        }
+
+        protected override void Start()
+        {
+            base.Start();
+
+            startPosition = transform.position;
         }
 
         private void Update()
