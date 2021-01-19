@@ -1,4 +1,6 @@
 ﻿using DesertStormZombies.Entity;
+using DesertStormZombies.Entity.Player;
+using DesertStormZombies.Game;
 using DesertStormZombies.Utility;
 
 using UnityEngine;
@@ -8,6 +10,9 @@ namespace DesertStormZombies.Items
     [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
     public class WeaponHolder : MonoBehaviour
     {
+        [SerializeField] private PointsHolder pointsHolder;
+        [SerializeField] private GameStatistics gameStatistics;
+
         [Header("Weapon Data")]
         [SerializeField] private float damageModifier;
         [SerializeField] private float fireRateModifier;
@@ -43,11 +48,18 @@ namespace DesertStormZombies.Items
 
             if (Input.GetMouseButton(0) && fireRateTimer.Check(Time.deltaTime))
             {
-                Debug.LogWarning("Shot");
-
                 if(Physics.Raycast(ShotRay, out RaycastHit hit, 1000) && hit.collider.TryGetComponent(out Health health))
                 {
+                    pointsHolder += 10;
+
                     health.Reduce((uint)(weaponData.Damage * damageModifier));
+
+                    if (health.isDepleted)
+                    {
+                        gameStatistics.AddKills(1);
+
+                        Destroy(hit.collider.gameObject);
+                    }
                 }
             }
         }

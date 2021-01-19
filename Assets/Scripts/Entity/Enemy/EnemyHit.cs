@@ -21,14 +21,7 @@ namespace DesertStormZombies.Entity.Enemy
         {
             if (collision.gameObject.TryGetComponent(out BulletScript bullet))
             {
-                pointsHolder += 10;
-
-                health.Reduce(25);
-
-                if (health.isDepleted)
-                {
-                    Destroy(gameObject);
-                }
+       
             }
         }
     }
