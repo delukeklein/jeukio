@@ -1,33 +1,62 @@
-﻿using System.Collections;
+﻿using DesertStormZombies.Entity.Player;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GeneratorScript : MonoBehaviour
+namespace DesertStormZombies.Interaction
 {
-    [Header("GO")]
-
-    GameObject Generator1;
-    GameObject Generator2;
-
-    [Header("Boollean")]
-
-    bool Generator1State = false;
-    bool Generator2State = false;
-
-    //[Header("ECT")]
-
-
-
-    void Start()
+    public class GeneratorScript : Interactable
     {
-        
-    }
 
-    void Update()
-    {
-        if(Generator1 && Generator1State && Generator2 && Generator2State == true)
+        public override void Focused(PlayerInteractor interactor)
         {
-            //hier moeten de machines aan en de ui aan en de andere ui uit met (requires power) 
+            interactor.SetText("Press E to Activate");
+        }
+
+        public override void Interact(PlayerInteractor interactor)
+        {
+            Collider.enabled = false;
+
+           
+
+        }
+
+        public override bool Condition(PlayerInteractor interactor)
+        {
+            return true; 
+        }
+
+
+        [Header("Generators")]
+
+       [SerializeField] GameObject Generator1;
+       [SerializeField] GameObject Generator2;
+
+        [Header("Bool")]
+
+        [SerializeField] bool Generator1State = false;
+        [SerializeField] bool Generator2State = false;
+
+        [SerializeField] bool HealthPowerUpActivate = false;
+        [SerializeField] bool FireRatePowerUpActivate = false;
+        [SerializeField] bool SpeedPowerUpActivate = false;
+        [SerializeField] bool FastReloadPowerUpActivate = false;
+
+        [Header("Script")]
+
+        [SerializeField] GeneratorScript generatorScript;
+
+        protected override void Start()
+        {
+            base.Start();
+
+        }
+
+        void Update()
+        {
+            
         }
     }
+
 }
+
