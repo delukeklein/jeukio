@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: e0cdba61a0eb70e40951ef3bdb910bd9, type: 2}
+--- !u!114 &196120441 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5120491577616465659, guid: 2c2f10177cbb4644ca1b0d54d82f528c, type: 3}
+  m_PrefabInstance: {fileID: 5120491577861222061}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 143b1ccb9db5408418ae67ec39924681, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &520325628
 GameObject:
   m_ObjectHideFlags: 0
@@ -14699,6 +14710,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStatistics: {fileID: 0}
+  minimumKills: 10
+  waveMulitplier: 1.25
 --- !u!4 &3284075793873053421
 Transform:
   m_ObjectHideFlags: 0
@@ -15265,9 +15278,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1930342079186404794, guid: 2c2f10177cbb4644ca1b0d54d82f528c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1930342079186404794, guid: 2c2f10177cbb4644ca1b0d54d82f528c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2302849930007686244, guid: 2c2f10177cbb4644ca1b0d54d82f528c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 375
+      objectReference: {fileID: 0}
+    - target: {fileID: 2302849930007686244, guid: 2c2f10177cbb4644ca1b0d54d82f528c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2302849930007686244, guid: 2c2f10177cbb4644ca1b0d54d82f528c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2302849930007686244, guid: 2c2f10177cbb4644ca1b0d54d82f528c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2502404222448268455, guid: 2c2f10177cbb4644ca1b0d54d82f528c, type: 3}
+      propertyPath: health
+      value: 
+      objectReference: {fileID: 196120441}
     - target: {fileID: 3924272831952461876, guid: 2c2f10177cbb4644ca1b0d54d82f528c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5120491576265761889, guid: 2c2f10177cbb4644ca1b0d54d82f528c, type: 3}
+      propertyPath: m_Name
+      value: Interaction Text
       objectReference: {fileID: 0}
     - target: {fileID: 5120491576397312519, guid: 2c2f10177cbb4644ca1b0d54d82f528c, type: 3}
       propertyPath: near clip plane
@@ -15325,12 +15370,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5120491578043025123, guid: 2c2f10177cbb4644ca1b0d54d82f528c, type: 3}
+      propertyPath: pointsHolder
+      value: 
+      objectReference: {fileID: 5120491577861222062}
     - target: {fileID: 7665946210810808024, guid: 2c2f10177cbb4644ca1b0d54d82f528c, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c2f10177cbb4644ca1b0d54d82f528c, type: 3}
+--- !u!114 &5120491577861222062 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5120491577616465656, guid: 2c2f10177cbb4644ca1b0d54d82f528c, type: 3}
+  m_PrefabInstance: {fileID: 5120491577861222061}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aba66c524eddd3f4291f1a642ffbe101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5441207590526872399
 PrefabInstance:
   m_ObjectHideFlags: 0
