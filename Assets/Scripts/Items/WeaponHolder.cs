@@ -13,27 +13,38 @@ namespace DesertStormZombies.Items
         [SerializeField] private float fireRateModifier;
         [SerializeField] private float reloadSpeedModifier;
 
-        [SerializeField] private WeaponData weaponData;
+        private WeaponData weaponData;
 
         private IntervalTimer fireRateTimer;
 
         private MeshFilter meshFilter;
+        private MeshRenderer meshRenderer;
+
+        private bool HoldingWeapon => weaponData != null;
 
         private Ray ShotRay => new Ray(transform.position, transform.TransformDirection(Vector3.forward));
 
-        private void Start()
+        private void Awake()
         {
             fireRateTimer = new IntervalTimer(0);
 
             meshFilter = GetComponent<MeshFilter>();
+            meshRenderer = GetComponent<MeshRenderer>();
         }
 
         private void Update()
         {
+            if(!HoldingWeapon)
+            {
+                return;
+            }
+
             fireRateTimer.Interval = weaponData.FireRate * fireRateModifier;
 
             if (Input.GetMouseButton(0) && fireRateTimer.Check(Time.deltaTime))
             {
+                Debug.LogWarning("Shot");
+
                 if(Physics.Raycast(ShotRay, out RaycastHit hit, 1000) && hit.collider.TryGetComponent(out Health health))
                 {
                     health.Reduce((uint)(weaponData.Damage * damageModifier));
@@ -45,7 +56,16 @@ namespace DesertStormZombies.Items
         {
             this.weaponData = weaponData;
 
-            meshFilter.mesh = weaponData.mesh;          
+            if (HoldingWeapon)
+            {
+                meshFilter.mesh = weaponData.mesh;
+                meshRenderer.material = weaponData.material;
+            }   
+            else
+            {
+                meshFilter.mesh = null;
+                meshRenderer.material = null;
+            }
         }
     }
 }
