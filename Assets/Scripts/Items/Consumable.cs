@@ -1,7 +1,9 @@
-﻿namespace DesertStormZombies.Items
+﻿using DesertStormZombies.Entity.Player;
+
+namespace DesertStormZombies.Items
 {
     public interface Consumable
     {
-        void Consume();
+        void Consume(PlayerInventory playerInventory);
     }
 }

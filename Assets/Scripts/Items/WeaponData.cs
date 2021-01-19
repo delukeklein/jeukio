@@ -11,5 +11,6 @@ namespace DesertStormZombies.Items
         public float ReloadSpeed;
 
         public Mesh mesh;
+        public Material material;
     }
 }
