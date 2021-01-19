@@ -1,21 +1,83 @@
-﻿using DesertStormZombies.Utility;
-using System.Collections;
-using System.Collections.Generic;
+﻿using DesertStormZombies.Entity;
+using DesertStormZombies.Entity.Player;
+using DesertStormZombies.Game;
+using DesertStormZombies.Utility;
+
 using UnityEngine;
 
-public class WeaponHolder : MonoBehaviour
+namespace DesertStormZombies.Items
 {
-    [SerializeField] Transform shootingPoint;
-
-    private IntervalTimer intervalTimer;
-
-    protected void Start()
+    [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
+    public class WeaponHolder : MonoBehaviour
     {
-        intervalTimer = new IntervalTimer(0);
-    }
+        [SerializeField] private PointsHolder pointsHolder;
+        [SerializeField] private GameStatistics gameStatistics;
 
-    public void Reload()
-    {
+        [Header("Weapon Data")]
+        [SerializeField] private float damageModifier;
+        [SerializeField] private float fireRateModifier;
+        [SerializeField] private float reloadSpeedModifier;
 
+        private WeaponData weaponData;
+
+        private IntervalTimer fireRateTimer;
+
+        private MeshFilter meshFilter;
+        private MeshRenderer meshRenderer;
+
+        private bool HoldingWeapon => weaponData != null;
+
+        private Ray ShotRay => new Ray(transform.position, transform.TransformDirection(Vector3.forward));
+
+        private void Awake()
+        {
+            fireRateTimer = new IntervalTimer(0);
+
+            meshFilter = GetComponent<MeshFilter>();
+            meshRenderer = GetComponent<MeshRenderer>();
+        }
+
+        private void Update()
+        {
+            if(!HoldingWeapon)
+            {
+                return;
+            }
+
+            fireRateTimer.Interval = weaponData.FireRate * fireRateModifier;
+
+            if (Input.GetMouseButton(0) && fireRateTimer.Check(Time.deltaTime))
+            {
+                if(Physics.Raycast(ShotRay, out RaycastHit hit, 1000) && hit.collider.TryGetComponent(out Health health))
+                {
+                    pointsHolder += 10;
+
+                    health.Reduce((uint)(weaponData.Damage * damageModifier));
+
+                    if (health.isDepleted)
+                    {
+                        gameStatistics.AddKills(1);
+
+                        Destroy(hit.collider.gameObject);
+                    }
+                }
+            }
+        }
+
+        public void SetWeaponData(WeaponData weaponData)
+        {
+            this.weaponData = weaponData;
+
+            if (HoldingWeapon)
+            {
+                meshFilter.mesh = weaponData.mesh;
+                meshRenderer.material = weaponData.material;
+            }   
+            else
+            {
+                meshFilter.mesh = null;
+                meshRenderer.material = null;
+            }
+        }
     }
 }

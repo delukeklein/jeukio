@@ -33,7 +33,7 @@ public class Pauzemenuu : MonoBehaviour
             }
         }
 
-        if (health.health <= 0 && !isDead)
+        if (health.isDepleted && !isDead)
         {
             death();
 
