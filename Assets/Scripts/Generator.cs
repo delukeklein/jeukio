@@ -9,10 +9,10 @@ namespace DesertStormZombies.Interaction
         [Header("Stats")]
         [SerializeField] private bool toggled = false;
 
-        [SerializeField] private bool healthPowerUpActivate = false;
-        [SerializeField] private bool fireRatePowerUpActivate = false;
-        [SerializeField] private bool speedPowerUpActivate = false;
-        [SerializeField] private bool fastReloadPowerUpActivate = false;
+        [SerializeField] private GameObject healthPowerUpActivate;
+        [SerializeField] private GameObject fireRatePowerUpActivate;
+        [SerializeField] private GameObject speedPowerUpActivate;
+        [SerializeField] private GameObject fastReloadPowerUpActivate;
 
         [Header("Pair")]
         [SerializeField] private Generator other;
@@ -38,6 +38,11 @@ namespace DesertStormZombies.Interaction
                 if (other.Toggled)
                 {
                     //doe wat er moet gebeuren als beide aan staan
+
+                    healthPowerUpActivate.SetActive(true);
+                    fireRatePowerUpActivate.SetActive(true);
+                    speedPowerUpActivate.SetActive(true);
+                    fastReloadPowerUpActivate.SetActive(true);
                 }
             }
             
