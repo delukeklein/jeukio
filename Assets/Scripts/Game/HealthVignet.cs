@@ -6,21 +6,21 @@ using UnityEngine.UI;
 
 namespace DesertStormZombies.Game
 {
-    [RequireComponent(typeof(Slider))]
-    public class HealthBar : MonoBehaviour
+    [RequireComponent(typeof(Image))]
+    public class HealthVignet : MonoBehaviour
     {
         [SerializeField] private Health health;
 
-        private Slider slider;
+        private Image image;
 
         private void Start()
         {
-            slider = GetComponent<Slider>();
+            image = GetComponent<Image>();
         }
 
         private void Update()
         {
-            slider.value = (float) health.CurrentHealth / health.MaxHealth;
+            image.color = new Color(1, 1, 1, 1f - ((float) health.CurrentHealth / health.MaxHealth));
         }
     }
 }
