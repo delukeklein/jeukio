@@ -10,7 +10,7 @@ namespace DesertStormZombies.Interaction
     public class SpeedO : Interactable
     {
         [SerializeField] private int pointsCost;
-
+       [SerializeField] PlayerMovement playerMovement; 
         public override bool Condition(PlayerInteractor interactor)
         {
             var pointsHolder = interactor.GetComponent<PointsHolder>();
@@ -30,18 +30,18 @@ namespace DesertStormZombies.Interaction
             pointsHolder -= pointsCost;
             //walkspeed
             //runspeed
-            
-            
+            playerMovement.walkingSpeed = 10;
+            playerMovement.runningSpeed = 15;
         }
 
         protected override void Start()
         {
             base.Start();
+            playerMovement.GetComponent<PlayerMovement>();
         }
 
         void Update()
         {
-
            
         }
     }

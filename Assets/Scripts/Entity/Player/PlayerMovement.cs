@@ -12,8 +12,8 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Movement")]
     [SerializeField] private float movementSmoothness;
-    [SerializeField] protected float runningSpeed;
-    [SerializeField] protected float walkingSpeed;
+    [SerializeField] public float runningSpeed;
+    [SerializeField] public float walkingSpeed;
     [SerializeField] private float jumpForce;
 
     [Header("Mouse")]

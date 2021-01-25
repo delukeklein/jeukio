@@ -28,8 +28,17 @@ public class UI : MonoBehaviour
         ShowSettings = false;
 
         set.SetActive(false);
-    }
+        Time.timeScale = 1f;
 
+    }
+    public void Close1()
+    {
+        ShowSettings = false;
+
+        set.SetActive(false);
+        
+
+    }
     public void Quit()
     {
         Application.Quit();
