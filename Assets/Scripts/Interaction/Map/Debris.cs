@@ -8,7 +8,6 @@ namespace DesertStormZombies.Interaction.Map
     public class Debris : Interactable
     {
         [SerializeField] private int pointsCost;
-        [SerializeField] private int minimumWave;
 
         [SerializeField] private float speed;
 
@@ -36,10 +35,9 @@ namespace DesertStormZombies.Interaction.Map
 
         public override bool Condition(PlayerInteractor interactor)
         {
-            var waves = interactor.GetComponent<GameWaves>();
             var pointsHolder = interactor.GetComponent<PointsHolder>();
 
-            return pointsHolder.Amount >= pointsCost && waves.Wave >= minimumWave;
+            return pointsHolder.Amount >= pointsCost;
         }
 
         public void Restore()

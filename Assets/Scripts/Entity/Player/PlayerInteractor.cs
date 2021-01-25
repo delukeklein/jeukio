@@ -11,9 +11,13 @@ namespace DesertStormZombies.Entity.Player
 
         [SerializeField] private TextMeshProUGUI text;
 
+        [SerializeField] private PlayerMovement playerMovement;
+
         private Interactable interactable;
 
         private Ray InteractionRay => new Ray(transform.position, transform.TransformDirection(Vector3.forward));
+
+        public PlayerMovement PlayerMovement => playerMovement;
 
         private void Update()
         {

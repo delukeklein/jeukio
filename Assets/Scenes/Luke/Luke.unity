@@ -679,7 +679,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsCost: 0
-  minimumWave: 0
   speed: 2.21
   destination: {x: -20.16, y: -20.74, z: -11.79}
 --- !u!65 &1855592995
@@ -2158,6 +2157,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -490
       objectReference: {fileID: 0}
+    - target: {fileID: 2370338566068244558, guid: 2c2f10177cbb4644ca1b0d54d82f528c, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 5120491577861222075}
     - target: {fileID: 2502404222448268455, guid: 2c2f10177cbb4644ca1b0d54d82f528c, type: 3}
       propertyPath: health
       value: 
