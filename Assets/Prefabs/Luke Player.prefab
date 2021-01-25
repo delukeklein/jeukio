@@ -451,6 +451,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5120491577599097640}
+  - component: {fileID: 2370338566068244558}
+  - component: {fileID: 8869109612080992792}
+  - component: {fileID: 8405022062034314904}
   m_Layer: 0
   m_Name: Torso
   m_TagString: Untagged
@@ -475,6 +478,47 @@ Transform:
   m_Father: {fileID: 5120491577616465663}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2370338566068244558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5120491577599097641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd855bff1c8f268498626d5115ea4d26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 8
+  text: {fileID: 5120491576265761888}
+--- !u!114 &8869109612080992792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5120491577599097641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aba66c524eddd3f4291f1a642ffbe101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8405022062034314904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5120491577599097641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60c1aeba7353b404683ee45a972260ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStatistics: {fileID: 5120491577616465658}
+  minimumKills: 10
+  waveMulitplier: 1.25
 --- !u!1 &5120491577616465635
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,9 +530,7 @@ GameObject:
   - component: {fileID: 5120491577616465663}
   - component: {fileID: 5120491577616465660}
   - component: {fileID: 5120491577616465657}
-  - component: {fileID: 5120491577616465662}
   - component: {fileID: 5120491577616465659}
-  - component: {fileID: 5120491577616465653}
   - component: {fileID: 5120491577616465658}
   - component: {fileID: 5120491577616465656}
   - component: {fileID: 5120491577616465661}
@@ -528,6 +570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   torso: {fileID: 5120491577599097640}
+  audioSource: {fileID: 0}
   movementSmoothness: 0.15
   runningSpeed: 5
   walkingSpeed: 8
@@ -536,6 +579,8 @@ MonoBehaviour:
   rotationSmoothness: 0.05
   minVerticalAngle: -90
   maxVerticalAngle: 90
+  runSound: {fileID: 0}
+  walkSound: {fileID: 0}
   input:
     rotateX: Mouse X
     rotateY: Mouse Y
@@ -566,26 +611,6 @@ MonoBehaviour:
     KnifeKey: 51
     PrimaryConsumableKey: 52
     SecondaryConsumableKey: 53
-  reloadAnimationCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!114 &5120491577616465662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5120491577616465635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd855bff1c8f268498626d5115ea4d26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distance: 5
-  text: {fileID: 5120491576265761888}
 --- !u!114 &5120491577616465659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -600,21 +625,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
---- !u!114 &5120491577616465653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5120491577616465635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60c1aeba7353b404683ee45a972260ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerStatistics: {fileID: 5120491577616465658}
-  minimumKills: 10
-  waveMulitplier: 1.25
 --- !u!114 &5120491577616465658
 MonoBehaviour:
   m_ObjectHideFlags: 0

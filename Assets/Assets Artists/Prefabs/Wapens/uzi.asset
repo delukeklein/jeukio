@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3fc54e119646b544197f6af0456f53a6, type: 3}
-  m_Name: m4
+  m_Name: uzi
   m_EditorClassIdentifier: 
-  Damage: 25
-  FireRate: 0.1
-  ReloadSpeed: 1
-  Model: {fileID: 919132149155446097, guid: 67a6dd39f8dc8ad44aa043aa0127f3ed, type: 3}
-  ShootAnimationClip: {fileID: 1827226128182048838, guid: 67a6dd39f8dc8ad44aa043aa0127f3ed, type: 3}
+  Damage: 15
+  FireRate: 0.2
+  ReloadSpeed: 0
+  Model: {fileID: 1160963402652010154, guid: 3654f3e76292ee44290bf9047fd8b50a, type: 3}
+  ShootAnimationClip: {fileID: 1827226128182048838, guid: b26b928b56927a746bfefdcc5201ebd1, type: 3}

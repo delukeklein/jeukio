@@ -31,7 +31,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6817586715403453796}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -12.443511, y: 9.009828, z: -12.911662}
 --- !u!33 &726053564589524025
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -112,7 +112,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6817586715403453796}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -4.0861936, y: -2.332254, z: 0.37419647}
 --- !u!33 &4533311236275871295
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -171,6 +171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6817586715403453796}
+  - component: {fileID: 386348173946671208}
   m_Layer: 0
   m_Name: Knife
   m_TagString: Untagged
@@ -186,7 +187,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6185481141697109982}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.0000029504295}
-  m_LocalPosition: {x: -28.58, y: -0.044, z: -23.52}
+  m_LocalPosition: {x: -3.125, y: -0.044, z: 2.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9142282058995358015}
@@ -194,3 +195,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!111 &386348173946671208
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6185481141697109982}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 1827226128182048838, guid: e28583d5821800c48bf8693591c25e77, type: 3}
+  m_Animations:
+  - {fileID: 1827226128182048838, guid: e28583d5821800c48bf8693591c25e77, type: 3}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

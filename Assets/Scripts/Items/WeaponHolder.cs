@@ -95,10 +95,11 @@ namespace DesertStormZombies.Items
 
         private void InstantiateWeaponData()
         {
+            Destroy(weaponModel);
+
             weaponModel = Instantiate(weaponData.Model, transform);
 
-            ShootAnimation = weaponModel.AddComponent<Animation>();
-            ShootAnimation.clip = weaponData.ShootAnimationClip;
+            ShootAnimation = weaponModel.GetComponent<Animation>();
         }
     }
 }

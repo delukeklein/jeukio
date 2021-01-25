@@ -1,4 +1,5 @@
 ﻿using DesertStormZombies.Interaction;
+using DesertStormZombies.Interaction.Map;
 using TMPro;
 using UnityEngine;
 

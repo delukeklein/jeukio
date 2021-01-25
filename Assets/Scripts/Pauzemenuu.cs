@@ -7,7 +7,7 @@ public class Pauzemenuu : MonoBehaviour
 {
     public bool gameisPaused = false;
 
-    public FpsControllerLPFP PC;
+    public PlayerMovement PC;
     public GameObject PM;
     public GameObject DeathScreen;
 
