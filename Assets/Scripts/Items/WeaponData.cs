@@ -10,7 +10,8 @@ namespace DesertStormZombies.Items
         public float FireRate;
         public float ReloadSpeed;
 
-        public Mesh mesh;
-        public Material material;
+        public GameObject Model;
+
+        public AnimationClip ShootAnimationClip;
     }
 }

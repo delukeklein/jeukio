@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DesertStormZombies.Utility;
+using System;
 using System.Linq;
 using UnityEngine;
 
@@ -7,6 +8,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Transform torso;
+    [SerializeField] private AudioSource audioSource;
 
     [Header("Movement")]
     [SerializeField] private float movementSmoothness;
@@ -19,6 +21,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float rotationSmoothness;
     [SerializeField] private float minVerticalAngle;
     [SerializeField] private float maxVerticalAngle;
+
+    [Header("Sound")]
+    [SerializeField] private AudioClip runSound;
+    [SerializeField] private AudioClip walkSound;
 
     [Header("Input")]
     [SerializeField] private MovementInput input;
@@ -38,6 +44,8 @@ public class PlayerMovement : MonoBehaviour
     private readonly RaycastHit[] wallCastResults = new RaycastHit[8];
     private readonly RaycastHit[] groundCastResults = new RaycastHit[8];
 
+    private IntervalTimer walkTimer;
+
     void Start()
     {
         capsule = GetComponent<CapsuleCollider>();
@@ -53,7 +61,6 @@ public class PlayerMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         torso.SetPositionAndRotation(transform.position, transform.rotation);
-
     }
 
     private void OnCollisionStay(Collision collision)
@@ -77,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = true;
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         Move();
         Rotate();
@@ -89,6 +96,22 @@ public class PlayerMovement : MonoBehaviour
         torso.position = transform.position;
 
         Jump();
+
+        if (isGrounded && rigidbody3D.velocity.sqrMagnitude > 0.1f)
+        {
+            audioSource.clip = input.Run ? walkSound : runSound;
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
+        }
+        else
+        {
+            if (audioSource.isPlaying)
+            {
+                audioSource.Pause();
+            }
+        }
     }
 
     private void Jump()
@@ -215,7 +238,6 @@ public class PlayerMovement : MonoBehaviour
             current = startAngle;
         }
 
-        /// Returns the smoothed rotation.
         public float Update(float target, float smoothTime) => current = Mathf.SmoothDampAngle(current, target, ref currentVelocity, smoothTime);
 
         public float Current

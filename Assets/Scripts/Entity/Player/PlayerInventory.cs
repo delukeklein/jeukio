@@ -69,6 +69,8 @@ namespace DesertStormZombies.Entity.Player
 
             if (Input.GetMouseButtonDown(0))
             {
+                weaponHolder.ShootAnimation.Play();
+
                 if (inventory.PrimaryConsumable != null && equipped == EquippedItem.PrimaryConsumable)
                 {
                     inventory.PrimaryConsumable.Consume(this);
@@ -81,6 +83,7 @@ namespace DesertStormZombies.Entity.Player
                     inventory.SecondaryConsumable = null;
                 }
             }
+    
         }
 
         private void SwitchItem()

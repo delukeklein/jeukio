@@ -2,44 +2,46 @@
 using DesertStormZombies.Entity.Player;
 using DesertStormZombies.Game;
 using DesertStormZombies.Utility;
-
+using System.Collections;
+using UnityEditor;
 using UnityEngine;
 
 namespace DesertStormZombies.Items
 {
-    [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
+    [RequireComponent(typeof(Animation))]
     public class WeaponHolder : MonoBehaviour
     {
         [SerializeField] private PointsHolder pointsHolder;
         [SerializeField] private GameStatistics gameStatistics;
 
-        [Header("Weapon Data")]
+        [Header("Weapon Modifier")]
         [SerializeField] private float damageModifier;
         [SerializeField] private float fireRateModifier;
         [SerializeField] private float reloadSpeedModifier;
 
         private WeaponData weaponData;
+        private GameObject weaponModel;
+
+        private Animation holderAnimation;
 
         private IntervalTimer fireRateTimer;
 
-        private MeshFilter meshFilter;
-        private MeshRenderer meshRenderer;
-
-        private bool HoldingWeapon => weaponData != null;
-
         private Ray ShotRay => new Ray(transform.position, transform.TransformDirection(Vector3.forward));
+
+        public bool SwitchingWeapon { get; private set; }
+
+        public Animation ShootAnimation { get; private set; }
 
         private void Awake()
         {
             fireRateTimer = new IntervalTimer(0);
 
-            meshFilter = GetComponent<MeshFilter>();
-            meshRenderer = GetComponent<MeshRenderer>();
+            holderAnimation = GetComponent<Animation>();
         }
 
         private void Update()
         {
-            if(!HoldingWeapon)
+            if(weaponData == null)
             {
                 return;
             }
@@ -68,16 +70,35 @@ namespace DesertStormZombies.Items
         {
             this.weaponData = weaponData;
 
-            if (HoldingWeapon)
+            if (weaponData != null)
             {
-                meshFilter.mesh = weaponData.mesh;
-                meshRenderer.material = weaponData.material;
+                holderAnimation.Play();
+
+                StartCoroutine(ChangeWeapon());
             }   
             else
             {
-                meshFilter.mesh = null;
-                meshRenderer.material = null;
+                Destroy(weaponModel);
             }
+        }
+
+        private IEnumerator ChangeWeapon()
+        {
+            SwitchingWeapon = true;
+
+            yield return new WaitForSeconds(0.5f);
+
+            InstantiateWeaponData();
+
+            SwitchingWeapon = false;
+        }
+
+        private void InstantiateWeaponData()
+        {
+            weaponModel = Instantiate(weaponData.Model, transform);
+
+            ShootAnimation = weaponModel.AddComponent<Animation>();
+            ShootAnimation.clip = weaponData.ShootAnimationClip;
         }
     }
 }

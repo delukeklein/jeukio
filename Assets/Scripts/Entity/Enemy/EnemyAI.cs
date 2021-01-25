@@ -109,6 +109,6 @@ public class EnemyAI : MonoBehaviour
 
     }
 
-    public void setTarget(FpsControllerLPFP playerController) => target = playerController.transform;
+    public void setTarget(PlayerMovement player) => target = player.transform;
 
 }

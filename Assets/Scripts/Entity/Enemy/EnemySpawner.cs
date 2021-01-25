@@ -10,7 +10,7 @@ namespace DesertStormZombies.Entity.Enemy
     {
         [Header("Refrences")]
         [SerializeField] private EnemyAI[] enemyPrefabs;
-        [SerializeField] private FpsControllerLPFP playerController;
+        [SerializeField] private PlayerMovement player;
 
         [Header("Settings")]
         [SerializeField] private uint minSpawn;
@@ -38,7 +38,7 @@ namespace DesertStormZombies.Entity.Enemy
 
         private void Update()
         {
-            IsPlayerInRange = Vector3.Distance(transform.position, playerController.transform.position) <= detectionRadius;
+            IsPlayerInRange = Vector3.Distance(transform.position, player.transform.position) <= detectionRadius;
 
             if (IsPlayerInRange && timer.Check(Time.deltaTime))
             {
@@ -63,7 +63,7 @@ namespace DesertStormZombies.Entity.Enemy
             {
                 EnemyAI enemy = Instantiate(RandomEnemy);
 
-                enemy.setTarget(playerController);
+                enemy.setTarget(player);
                 enemy.transform.position = transform.localToWorldMatrix.MultiplyVector(RandomSpawnPosition) + transform.position;
             }
         }
