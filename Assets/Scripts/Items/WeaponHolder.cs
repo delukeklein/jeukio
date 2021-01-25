@@ -41,7 +41,7 @@ namespace DesertStormZombies.Items
 
         private void Update()
         {
-            if(weaponData == null)
+            if (weaponData == null)
             {
                 return;
             }
@@ -50,7 +50,7 @@ namespace DesertStormZombies.Items
 
             if (Input.GetMouseButton(0) && fireRateTimer.Check(Time.deltaTime))
             {
-                if(Physics.Raycast(ShotRay, out RaycastHit hit, 1000) && hit.collider.TryGetComponent(out Health health))
+                if (Physics.Raycast(ShotRay, out RaycastHit hit, 1000) && hit.collider.TryGetComponent(out Health health))
                 {
                     pointsHolder += 10;
 
@@ -75,11 +75,24 @@ namespace DesertStormZombies.Items
                 holderAnimation.Play();
 
                 StartCoroutine(ChangeWeapon());
-            }   
+            }
             else
             {
                 Destroy(weaponModel);
             }
+        }
+
+        public void SetDamageModifier(float damageModifier) 
+        { 
+            this.damageModifier = damageModifier; 
+        }
+        public void SetFireRateModifier(float fireRateModifier) 
+        {
+            this.fireRateModifier = fireRateModifier; 
+        }
+        public void SetReloadSpeedModifier(float reloadSpeedModifier) 
+        { 
+            this.reloadSpeedModifier = reloadSpeedModifier; 
         }
 
         private IEnumerator ChangeWeapon()
