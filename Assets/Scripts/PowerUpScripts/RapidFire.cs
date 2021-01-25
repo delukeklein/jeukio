@@ -1,18 +1,43 @@
-﻿using System.Collections;
+﻿using DesertStormZombies.Entity.Player;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RapidFire : MonoBehaviour
+
+namespace DesertStormZombies.Interaction
 {
-    // Start is called before the first frame update
-    void Start()
+    public class RapidFire : Interactable
     {
-        
+        [SerializeField] private int pointsCost;
+
+        public override bool Condition(PlayerInteractor interactor)
+        {
+            var pointsHolder = interactor.GetComponent<PointsHolder>();
+
+            return pointsHolder.Amount >= pointsCost;
+        }
+
+        public override void Focused(PlayerInteractor interactor)
+        {
+            interactor.SetText("Press E to interact\nCosts " + pointsCost + "points");
+        }
+
+        public override void Interact(PlayerInteractor interactor)
+        {
+            var pointsHolder = interactor.GetComponent<PointsHolder>();
+
+            pointsHolder -= pointsCost;
+        }
+
+        protected override void Start()
+        {
+            base.Start();
+        }
+
+        void Update()
+        {
+
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
