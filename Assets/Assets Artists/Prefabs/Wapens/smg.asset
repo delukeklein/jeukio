@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc54e119646b544197f6af0456f53a6, type: 3}
+  m_Name: smg
+  m_EditorClassIdentifier: 
+  Damage: 20
+  FireRate: 0.1
+  ReloadSpeed: 0
+  Model: {fileID: 6427057835961766785, guid: f51435493dfc66646b748b7326a5ef02, type: 3}
+  ShootAnimationClip: {fileID: 1827226128182048838, guid: a5af3dcc4bcbe43449c4eb92f9978323, type: 3}
