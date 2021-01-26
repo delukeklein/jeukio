@@ -1304,6 +1304,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsCost: 0
+  FireRate: 0
+  weapon: {fileID: 7495846619723983022}
+  toggled: 0
 --- !u!1 &943362820981229173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1797,7 +1800,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2339,7 +2342,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!136 &7495846619211026607
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2430,6 +2433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 5
   text: {fileID: 7495846620024850989}
+  playerMovement: {fileID: 0}
 --- !u!114 &7495846619211026612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2504,8 +2508,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStatistics: {fileID: 7495846619211026615}
+  text: {fileID: 0}
   minimumKills: 10
   waveMulitplier: 1.25
+  textDuration: 0
 --- !u!95 &7495846619211026617
 Animator:
   serializedVersion: 3
@@ -2608,6 +2614,12 @@ MonoBehaviour:
   damageModifier: 1
   fireRateModifier: 1
   reloadSpeedModifier: 1
+  minSparkEmission: 1
+  maxSparkEmission: 7
+  lightDuration: 0.02
+  muzzleflashLight: {fileID: 0}
+  muzzleParticles: {fileID: 0}
+  sparkParticles: {fileID: 0}
 --- !u!1 &7495846620024850988
 GameObject:
   m_ObjectHideFlags: 0
@@ -3076,6 +3088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsCost: 0
+  toggled: 0
 --- !u!1 &8184820975551533830
 GameObject:
   m_ObjectHideFlags: 0

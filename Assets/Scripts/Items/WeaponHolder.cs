@@ -15,9 +15,9 @@ namespace DesertStormZombies.Items
         [SerializeField] private GameStatistics gameStatistics;
 
         [Header("Weapon Modifier")]
-        [SerializeField] private float damageModifier;
-        [SerializeField] private float fireRateModifier;
-        [SerializeField] private float reloadSpeedModifier;
+        [SerializeField] public float damageModifier;
+        [SerializeField] public float fireRateModifier;
+        [SerializeField] public float reloadSpeedModifier;
 
         [Header("Muzzle Flash")]
         [SerializeField] private int minSparkEmission = 1;
