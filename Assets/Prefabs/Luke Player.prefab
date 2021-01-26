@@ -10281,7 +10281,7 @@ MonoBehaviour:
   text: {fileID: 2179496094150242072}
   minimumKills: 1
   waveMulitplier: 1.25
-  textDuration: 10
+  textDuration: 4
 --- !u!1 &5120491577616465635
 GameObject:
   m_ObjectHideFlags: 0
