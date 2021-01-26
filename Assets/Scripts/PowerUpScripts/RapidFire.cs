@@ -59,7 +59,6 @@ namespace DesertStormZombies.Interaction
         {
             base.Start();
             //playerHealth.GetComponent<Health>();
-            
         }
 
         void Update()
