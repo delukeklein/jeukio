@@ -1,4 +1,5 @@
 ﻿using DesertStormZombies.Entity.Player;
+using DesertStormZombies.Items;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,16 +13,12 @@ namespace DesertStormZombies.Interaction
 
         [SerializeField] private int pointsCost;
 
-        // [Header("")]
-        //[SerializeField] PlayerMovement playerMovement;
-
         [Header("Stats")]
 
-        //[SerializeField] float playerWalkSpeed;
-       // [SerializeField] float playerRunningSpeed;
+        [SerializeField] float FireRate;
 
         [Header("Scripts")]
-       //[SerializeField] PlayerMovement playerMovement;
+       [SerializeField] WeaponHolder weapon;
 
 
         [Header("Bools")]
@@ -51,6 +48,8 @@ namespace DesertStormZombies.Interaction
                     var pointsHolder = interactor.GetComponent<PointsHolder>();
 
                     pointsHolder -= pointsCost;
+
+                    FireRate = weapon.fireRateModifier = 0.3f;
                 }
             }
         }
@@ -58,12 +57,11 @@ namespace DesertStormZombies.Interaction
         protected override void Start()
         {
             base.Start();
-            //playerHealth.GetComponent<Health>();
+            weapon.GetComponent<WeaponHolder>();
         }
 
         void Update()
         {
-
         }
     }
 
