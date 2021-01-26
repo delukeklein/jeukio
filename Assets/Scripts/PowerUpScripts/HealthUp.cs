@@ -1,4 +1,5 @@
 ﻿using DesertStormZombies.Entity.Player;
+using DesertStormZombies.Entity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,23 @@ namespace DesertStormZombies.Interaction
 {
     public class HealthUp : Interactable
     {
+
+        [Header("Cost")]
+
         [SerializeField] private int pointsCost;
+
+        [Header("Stats")]
+
+        [SerializeField] private int playerCurrentHealth;
+        [SerializeField] private int playerMaxHealth;
+
+        [Header("Scripts")]
+
+        [SerializeField] private Health playerHealth;
+
+        [Header("Bools")]
+        [SerializeField] private bool toggled = false;
+        public bool Toggled => toggled;
 
         public override bool Condition(PlayerInteractor interactor)
         {
@@ -18,24 +35,40 @@ namespace DesertStormZombies.Interaction
         }
         public override void Focused(PlayerInteractor interactor)
         {
-            interactor.SetText("Press E to interact\nCosts " + pointsCost + "points");
+            interactor.SetText(toggled ? "This PowerUp is already Used" : "Press E to interact\nCosts " + pointsCost + "points");
         }
 
         public override void Interact(PlayerInteractor interactor)
         {
-            var pointsHolder = interactor.GetComponent<PointsHolder>();
+            if (!toggled)
+            {
+                toggled = true;
 
-            pointsHolder -= pointsCost;
+                if (Toggled == true)
+                {
+                    var pointsHolder = interactor.GetComponent<PointsHolder>();
+
+                    pointsHolder -= pointsCost;
+
+                    playerCurrentHealth = playerHealth.health = 150;
+                    playerCurrentHealth = playerHealth.maxHealth = 150;
+                }
+            }
         }
 
         protected override void Start()
         {
             base.Start();
+            playerHealth.GetComponent<Health>();
+
         }
 
         void Update()
         {
+            print(playerHealth.maxHealth);
+            print(playerHealth.health);
 
         }
     }
 }
+

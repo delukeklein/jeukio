@@ -4,9 +4,9 @@ namespace DesertStormZombies.Entity
 {
     public class Health : MonoBehaviour
     {
-        [SerializeField] private int health;
+        [SerializeField] public int health;
 
-        [SerializeField] private int maxHealth;
+        [SerializeField] public int maxHealth;
 
         public bool isDepleted => health <= 0;
 
@@ -18,6 +18,6 @@ namespace DesertStormZombies.Entity
 
         public void Reduce(uint amount) => health -= (int)amount;
 
-        private void Start() => health = Mathf.Clamp(health, 0, maxHealth);
+        public void Start() => health = Mathf.Clamp(health, 0, maxHealth);
     }
 }

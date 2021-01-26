@@ -9,29 +9,52 @@ namespace DesertStormZombies.Interaction
 
     public class SpeedO : Interactable
     {
+
+        [Header("Cost")]
+
         [SerializeField] private int pointsCost;
-       [SerializeField] PlayerMovement playerMovement; 
+
+        [Header("Stats")]
+
+        [SerializeField] float playerWalkSpeed;
+        [SerializeField] float playerRunningSpeed;
+
+        [Header("Scripts")]
+        [SerializeField] PlayerMovement playerMovement;
+
+
+        [Header("Bools")]
+        [SerializeField] private bool toggled = false;
+        public bool Toggled => toggled;
+
         public override bool Condition(PlayerInteractor interactor)
         {
             var pointsHolder = interactor.GetComponent<PointsHolder>();
-
             return pointsHolder.Amount >= pointsCost;
         }
 
         public override void Focused(PlayerInteractor interactor)
         {
-            interactor.SetText("Press E to interact\nCosts " + pointsCost + "points");
+
+            interactor.SetText(toggled ? "This PowerUp is already Used" : "Press E to interact\nCosts " + pointsCost + "points");
         }
 
         public override void Interact(PlayerInteractor interactor)
         {
-            var pointsHolder = interactor.GetComponent<PointsHolder>();
+            if (!toggled)
+            {
+                toggled = true;
 
-            pointsHolder -= pointsCost;
-            //walkspeed
-            //runspeed
-            playerMovement.walkingSpeed = 10;
-            playerMovement.runningSpeed = 15;
+                if (Toggled == true)
+                {
+                    var pointsHolder = interactor.GetComponent<PointsHolder>();
+
+                    pointsHolder -= pointsCost;
+
+                    playerWalkSpeed = playerMovement.walkingSpeed = 10;
+                    playerRunningSpeed = playerMovement.runningSpeed = 15;
+                }
+            }
         }
 
         protected override void Start()
@@ -42,7 +65,7 @@ namespace DesertStormZombies.Interaction
 
         void Update()
         {
-           
+
         }
     }
 }
