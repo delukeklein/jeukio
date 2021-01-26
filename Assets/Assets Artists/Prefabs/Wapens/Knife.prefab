@@ -171,7 +171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6817586715403453796}
-  - component: {fileID: 386348173946671208}
+  - component: {fileID: 2070295155583021446}
   m_Layer: 0
   m_Name: Knife
   m_TagString: Untagged
@@ -187,7 +187,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6185481141697109982}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.0000029504295}
-  m_LocalPosition: {x: -3.125, y: -0.044, z: 2.25}
+  m_LocalPosition: {x: -3.1838, y: -0.1176, z: 2.2864}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9142282058995358015}
@@ -195,19 +195,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!111 &386348173946671208
-Animation:
+--- !u!95 &2070295155583021446
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6185481141697109982}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 1827226128182048838, guid: e28583d5821800c48bf8693591c25e77, type: 3}
-  m_Animations:
-  - {fileID: 1827226128182048838, guid: e28583d5821800c48bf8693591c25e77, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2431c8aeb821a92468d442a96ae8d22a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

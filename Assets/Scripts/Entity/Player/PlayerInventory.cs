@@ -68,22 +68,18 @@ namespace DesertStormZombies.Entity.Player
             SwitchItem();
 
             if (Input.GetMouseButtonDown(0))
-            {
-                weaponHolder.ShootAnimation.Play();
-
+            {      
                 if (inventory.PrimaryConsumable != null && equipped == EquippedItem.PrimaryConsumable)
                 {
                     inventory.PrimaryConsumable.Consume(this);
                     inventory.PrimaryConsumable = null;
                 }
-
-                if (inventory.SecondaryConsumable != null && equipped == EquippedItem.SecondaryConsumable)
+                else if (inventory.SecondaryConsumable != null && equipped == EquippedItem.SecondaryConsumable)
                 {
                     inventory.SecondaryConsumable.Consume(this);
                     inventory.SecondaryConsumable = null;
                 }
             }
-    
         }
 
         private void SwitchItem()

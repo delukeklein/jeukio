@@ -11,7 +11,5 @@ namespace DesertStormZombies.Items
         public float ReloadSpeed;
 
         public GameObject Model;
-
-        public AnimationClip ShootAnimationClip;
     }
 }

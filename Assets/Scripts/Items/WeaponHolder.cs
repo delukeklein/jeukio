@@ -19,6 +19,17 @@ namespace DesertStormZombies.Items
         [SerializeField] private float fireRateModifier;
         [SerializeField] private float reloadSpeedModifier;
 
+        [Header("Muzzle Flash")]
+        [SerializeField] private int minSparkEmission = 1;
+        [SerializeField] private int maxSparkEmission = 7;
+
+        [SerializeField] private float lightDuration = 0.02f;
+
+        [SerializeField] private Light muzzleflashLight;
+
+        [SerializeField] private ParticleSystem muzzleParticles;
+        [SerializeField] private ParticleSystem sparkParticles;
+
         private WeaponData weaponData;
         private GameObject weaponModel;
 
@@ -30,7 +41,7 @@ namespace DesertStormZombies.Items
 
         public bool SwitchingWeapon { get; private set; }
 
-        public Animation ShootAnimation { get; private set; }
+        public Animator ShootAnimator { get; private set; }
 
         private void Awake()
         {
@@ -50,6 +61,18 @@ namespace DesertStormZombies.Items
 
             if (Input.GetMouseButton(0) && fireRateTimer.Check(Time.deltaTime))
             {
+                if (ShootAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1)
+                {
+                    ShootAnimator.Play("Shoot", -1, 0f);
+                }
+
+
+                sparkParticles.Emit(Random.Range(minSparkEmission, maxSparkEmission));
+ 
+                muzzleParticles.Emit(1);
+              
+                StartCoroutine(MuzzleFlashLight());
+
                 if (Physics.Raycast(ShotRay, out RaycastHit hit, 1000) && hit.collider.TryGetComponent(out Health health))
                 {
                     pointsHolder += 10;
@@ -112,7 +135,16 @@ namespace DesertStormZombies.Items
 
             weaponModel = Instantiate(weaponData.Model, transform);
 
-            ShootAnimation = weaponModel.GetComponent<Animation>();
+            ShootAnimator = weaponModel.GetComponent<Animator>();
+        }
+
+        private IEnumerator MuzzleFlashLight()
+        {
+            muzzleflashLight.enabled = true;
+
+            yield return new WaitForSeconds(lightDuration);
+
+            muzzleflashLight.enabled = false;
         }
     }
 }
