@@ -51,7 +51,7 @@ MonoBehaviour:
   detectionRadius: 12
   width: 14.06
   depth: 14.4
-  spawnRate: 3
+  spawnRate: 4
 --- !u!1 &3866880204945731318
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,7 +103,7 @@ MonoBehaviour:
   detectionRadius: 8.8
   width: 7.3
   depth: 11.36
-  spawnRate: 3
+  spawnRate: 4
 --- !u!1 &3866880205038936809
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,7 +155,7 @@ MonoBehaviour:
   detectionRadius: 4.26
   width: 6.6
   depth: 7.9
-  spawnRate: 3
+  spawnRate: 4
 --- !u!1 &3866880205238641255
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +207,7 @@ MonoBehaviour:
   detectionRadius: 12
   width: 14.06
   depth: 14.4
-  spawnRate: 3
+  spawnRate: 4
 --- !u!1 &3866880205476481678
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,7 +259,7 @@ MonoBehaviour:
   detectionRadius: 12
   width: 14.06
   depth: 14.4
-  spawnRate: 3
+  spawnRate: 4
 --- !u!1 &3866880205516903727
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,7 +311,7 @@ MonoBehaviour:
   detectionRadius: 12
   width: 14.06
   depth: 14.4
-  spawnRate: 3
+  spawnRate: 4
 --- !u!1 &3866880205517610041
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,7 +363,7 @@ MonoBehaviour:
   detectionRadius: 12.01
   width: 14.06
   depth: 14.4
-  spawnRate: 3
+  spawnRate: 4
 --- !u!1 &3866880205656291529
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,7 +415,7 @@ MonoBehaviour:
   detectionRadius: 8.8
   width: 7.6
   depth: 14.4
-  spawnRate: 3
+  spawnRate: 4
 --- !u!1 &3866880205661046565
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,7 +467,7 @@ MonoBehaviour:
   detectionRadius: 13.9
   width: 14.5
   depth: 26.7
-  spawnRate: 3
+  spawnRate: 4
 --- !u!1 &3866880205834826255
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,7 +519,7 @@ MonoBehaviour:
   detectionRadius: 12
   width: 14.06
   depth: 14.4
-  spawnRate: 3
+  spawnRate: 4
 --- !u!1 &3866880205863936769
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,7 +571,7 @@ MonoBehaviour:
   detectionRadius: 8.3
   width: 12.05
   depth: 8.9
-  spawnRate: 3
+  spawnRate: 4
 --- !u!1 &3866880206078371297
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,7 +623,7 @@ MonoBehaviour:
   detectionRadius: 9.6
   width: 13.29
   depth: 9.2
-  spawnRate: 3
+  spawnRate: 4
 --- !u!1 &3866880206113150742
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,7 +675,7 @@ MonoBehaviour:
   detectionRadius: 12
   width: 14.06
   depth: 14.4
-  spawnRate: 3
+  spawnRate: 4
 --- !u!1 &3866880206263151212
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,7 +727,7 @@ MonoBehaviour:
   detectionRadius: 12
   width: 14.06
   depth: 14.4
-  spawnRate: 3
+  spawnRate: 4
 --- !u!1 &3866880206593217079
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,7 +779,7 @@ MonoBehaviour:
   detectionRadius: 12
   width: 14.06
   depth: 14.4
-  spawnRate: 3
+  spawnRate: 4
 --- !u!1 &3866880206640831787
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,7 +831,7 @@ MonoBehaviour:
   detectionRadius: 4.26
   width: 6.6
   depth: 7.9
-  spawnRate: 3
+  spawnRate: 4
 --- !u!1 &3866880206751366257
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,7 +883,7 @@ MonoBehaviour:
   detectionRadius: 12
   width: 14.06
   depth: 14.4
-  spawnRate: 3
+  spawnRate: 4
 --- !u!1 &3866880206790909456
 GameObject:
   m_ObjectHideFlags: 0
