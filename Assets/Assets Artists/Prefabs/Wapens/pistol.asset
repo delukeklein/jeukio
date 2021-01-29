@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: pistol
   m_EditorClassIdentifier: 
   Damage: 20
-  FireRate: 0.25
+  ShootDistance: 1000
+  FireRate: 0
   ReloadSpeed: 0
+  Semi: 1
+  UseMuzzleFlash: 1
   Model: {fileID: 1935876521067419106, guid: e5c4196e58930ca4bb0302a88de81ef1, type: 3}
-  ShootAnimationClip: {fileID: 1827226128182048838, guid: 0a3f3790cdcc44b4f87d37a5972a2555, type: 3}

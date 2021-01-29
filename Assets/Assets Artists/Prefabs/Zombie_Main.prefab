@@ -934,7 +934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bf9fd1553807204aa944c414e7ec496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 8
   distanceThreshold: 500
   attackThreshold: 2.5
   state: 0

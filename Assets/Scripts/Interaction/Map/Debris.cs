@@ -1,5 +1,4 @@
 ﻿using DesertStormZombies.Entity.Player;
-using DesertStormZombies.Game;
 
 using UnityEngine;
 
@@ -13,13 +12,17 @@ namespace DesertStormZombies.Interaction.Map
 
         [SerializeField] private Vector3 destination;
 
+        private Collider[] colliders;
+
         private Vector3 startPosition;
 
         public bool Unlocked { get; private set; }
 
         public override void Focused(PlayerInteractor interactor)
         {
-            interactor.SetText("Press E to interact\nCosts " + pointsCost + " points");
+            var pointsHolder = interactor.GetComponent<PointsHolder>();
+
+            interactor.SetText("Press E to interact\nCosts " + (Condition(interactor) ? "<color=green>" : "<color=red>") + pointsCost + "</color>" + " points");
         }
 
         public override void Interact(PlayerInteractor interactor)
@@ -29,6 +32,11 @@ namespace DesertStormZombies.Interaction.Map
             pointsHolder -= pointsCost;
 
             Collider.enabled = false;
+
+            foreach(Collider collider in colliders)
+            {
+                collider.enabled = false;
+            }
 
             Unlocked = true;
         }
@@ -52,6 +60,8 @@ namespace DesertStormZombies.Interaction.Map
             base.Start();
 
             startPosition = transform.position;
+
+            colliders = GetComponentsInChildren<Collider>();
         }
 
         private void Update()

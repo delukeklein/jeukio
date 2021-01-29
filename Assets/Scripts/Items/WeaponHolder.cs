@@ -57,37 +57,28 @@ namespace DesertStormZombies.Items
                 return;
             }
 
-            fireRateTimer.Interval = weaponData.FireRate * fireRateModifier;
-
-            if (Input.GetMouseButton(0) && fireRateTimer.Check(Time.deltaTime))
+            if (weaponData.Semi)
             {
-                if (ShootAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1)
+                if (Input.GetMouseButtonDown(0))
                 {
-                    ShootAnimator.Play("Shoot", -1, 0f);
-                }
-
-
-                sparkParticles.Emit(Random.Range(minSparkEmission, maxSparkEmission));
- 
-                muzzleParticles.Emit(1);
-              
-                StartCoroutine(MuzzleFlashLight());
-
-                if (Physics.Raycast(ShotRay, out RaycastHit hit, 1000) && hit.collider.TryGetComponent(out Health health))
-                {
-                    pointsHolder += 10;
-
-                    health.Reduce((uint)(weaponData.Damage * damageModifier));
-
-                    if (health.isDepleted)
-                    {
-                        gameStatistics.AddKills(1);
-
-                        Destroy(hit.collider.gameObject);
-                    }
+                    Shoot();
                 }
             }
+            else
+            {
+                fireRateTimer.Interval = weaponData.FireRate * fireRateModifier;
+
+                if (Input.GetMouseButton(0) && fireRateTimer.Check(Time.deltaTime))
+                {
+                    Shoot();
+                }
+            }
+
         }
+
+        public void SetDamageModifier(float damageModifier) => this.damageModifier = damageModifier;
+        public void SetFireRateModifier(float fireRateModifier) => this.fireRateModifier = fireRateModifier;
+        public void SetReloadSpeedModifier(float reloadSpeedModifier) => this.reloadSpeedModifier = reloadSpeedModifier;
 
         public void SetWeaponData(WeaponData weaponData)
         {
@@ -105,17 +96,35 @@ namespace DesertStormZombies.Items
             }
         }
 
-        public void SetDamageModifier(float damageModifier) 
-        { 
-            this.damageModifier = damageModifier; 
-        }
-        public void SetFireRateModifier(float fireRateModifier) 
+        private void Shoot()
         {
-            this.fireRateModifier = fireRateModifier; 
-        }
-        public void SetReloadSpeedModifier(float reloadSpeedModifier) 
-        { 
-            this.reloadSpeedModifier = reloadSpeedModifier; 
+            if (ShootAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1)
+            {
+                ShootAnimator.Play("Shoot", -1, 0f);
+            }
+
+            if(weaponData.UseMuzzleFlash)
+            {
+                sparkParticles.Emit(Random.Range(minSparkEmission, maxSparkEmission));
+
+                muzzleParticles.Emit(1);
+
+                StartCoroutine(MuzzleFlashLight());
+            }
+          
+            if (Physics.Raycast(ShotRay, out RaycastHit hit, weaponData.ShootDistance) && hit.collider.TryGetComponent(out Health health))
+            {
+                health.Reduce((uint)(weaponData.Damage * damageModifier));
+
+                if (health.isDepleted)
+                {
+                    pointsHolder += 10;
+
+                    gameStatistics.AddKills(1);
+
+                    Destroy(hit.collider.gameObject);
+                }
+            }
         }
 
         private IEnumerator ChangeWeapon()

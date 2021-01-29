@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: knife
   m_EditorClassIdentifier: 
   Damage: 35
-  FireRate: 1
+  ShootDistance: 3
+  FireRate: 0
   ReloadSpeed: 0
+  Semi: 1
   Model: {fileID: 6185481141697109982, guid: af9820a6f43b1f645ab167c317c485a2, type: 3}
-  ShootAnimationClip: {fileID: 1827226128182048838, guid: e28583d5821800c48bf8693591c25e77, type: 3}

@@ -13,7 +13,7 @@ namespace DesertStormZombies.Game
 
         [SerializeField] private int minimumKills = 10;
 
-        [SerializeField] private float waveMulitplier = 1.25f;
+        [SerializeField] private float waveMulitplier = 1.5f;
         [SerializeField] private float textDuration;
 
         private int wave;
@@ -27,7 +27,7 @@ namespace DesertStormZombies.Game
 
         private void Update()
         {
-            if (playerStatistics.Kills > minimumKills + (wave - 1) * waveMulitplier)
+            if (playerStatistics.Kills > minimumKills + (minimumKills * (wave - 1 * waveMulitplier)))
             {
                 StartCoroutine(NextWave());
             }

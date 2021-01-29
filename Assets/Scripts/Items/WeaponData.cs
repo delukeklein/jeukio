@@ -7,8 +7,13 @@ namespace DesertStormZombies.Items
     {
         public int Damage;
 
+        public float ShootDistance;
         public float FireRate;
         public float ReloadSpeed;
+
+        public bool Semi;
+
+        public bool UseMuzzleFlash;
 
         public GameObject Model;
     }
