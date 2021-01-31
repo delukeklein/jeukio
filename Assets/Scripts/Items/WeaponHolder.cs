@@ -55,6 +55,11 @@ namespace DesertStormZombies.Items
             holderAnimation = GetComponent<Animation>();
         }
 
+        private void Start()
+        {
+            StartCoroutine(Reload());
+        }
+
         private void Update()
         {
             if (weaponData == null || reloading || SwitchingWeapon)
