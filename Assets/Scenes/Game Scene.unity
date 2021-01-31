@@ -434,10 +434,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5120491577616465659, guid: 2c2f10177cbb4644ca1b0d54d82f528c, type: 3}
-      propertyPath: regenerate
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5120491577616465663, guid: 2c2f10177cbb4644ca1b0d54d82f528c, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -701,19 +697,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1489221634}
   m_CullTransparentMesh: 0
---- !u!1 &1923561910 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5120491576397312522, guid: 2c2f10177cbb4644ca1b0d54d82f528c, type: 3}
-  m_PrefabInstance: {fileID: 838342978}
-  m_PrefabAsset: {fileID: 0}
---- !u!81 &1923561911
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1923561910}
-  m_Enabled: 1
 --- !u!1 &2025215866
 GameObject:
   m_ObjectHideFlags: 0
@@ -987,26 +970,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 920335206354792625, guid: 362b0fbe2bc356b41ab8f1b4142e8f3c, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 5187627710557908984, guid: 362b0fbe2bc356b41ab8f1b4142e8f3c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7651473070950910519, guid: 362b0fbe2bc356b41ab8f1b4142e8f3c, type: 3}
-      propertyPath: m_Convex
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7651473070950910519, guid: 362b0fbe2bc356b41ab8f1b4142e8f3c, type: 3}
-      propertyPath: m_CookingOptions
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8064199002074428630, guid: 362b0fbe2bc356b41ab8f1b4142e8f3c, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 8313844610342787626, guid: 362b0fbe2bc356b41ab8f1b4142e8f3c, type: 3}
       propertyPath: m_Name
       value: Arabian city sombies

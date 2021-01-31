@@ -55,11 +55,6 @@ namespace DesertStormZombies.Items
             holderAnimation = GetComponent<Animation>();
         }
 
-        private void Start()
-        {
-            StartCoroutine(Reload());
-        }
-
         private void Update()
         {
             if (weaponData == null || reloading || SwitchingWeapon)
@@ -151,6 +146,14 @@ namespace DesertStormZombies.Items
             }
         }
 
+        private void ReloadAmmo()
+        {
+            int bulletsToAdd = weaponData.MagSize - currentBullets;
+
+            currentBullets += bulletsToAdd;
+            bullets -= bulletsToAdd;
+        }
+
         private IEnumerator ChangeWeapon()
         {
             SwitchingWeapon = true;
@@ -158,6 +161,8 @@ namespace DesertStormZombies.Items
             yield return new WaitForSeconds(0.5f);
 
             InstantiateWeaponData();
+
+            ReloadAmmo();
 
             SwitchingWeapon = false;
         }
@@ -180,6 +185,8 @@ namespace DesertStormZombies.Items
             muzzleflashLight.enabled = false;
         }
 
+
+
         private IEnumerator Reload()
         {
             reloading = true;
@@ -188,8 +195,7 @@ namespace DesertStormZombies.Items
 
             yield return new WaitForSeconds(weaponData.ReloadSpeed / reloadSpeedModifier);
 
-            currentBullets += weaponData.MagSize - currentBullets;
-            bullets -= weaponData.MagSize - currentBullets;
+            ReloadAmmo();
 
             reloading = false;
         }
