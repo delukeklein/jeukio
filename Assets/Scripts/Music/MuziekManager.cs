@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/*
 public class MuziekManager : MonoBehaviour
 {
     public static MuziekManager Instance { get; private set; }
@@ -59,3 +59,4 @@ public class MuziekManager : MonoBehaviour
         return MusicSource.volume;
     }
 }
+*/

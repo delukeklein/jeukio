@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
 public class MusicSlider : MonoBehaviour
 {
     [SerializeField] private Slider slider;
@@ -16,3 +17,4 @@ public class MusicSlider : MonoBehaviour
         MuziekManager.Instance.SetMusicVolume( slider.value );
     }
 }
+*/
