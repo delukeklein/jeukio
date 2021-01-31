@@ -8,6 +8,10 @@ namespace DesertStormZombies.Entity
 
         [SerializeField] public int maxHealth;
 
+        [SerializeField] private bool regenerate;
+
+        private float lastTime;
+
         public bool isDepleted => health <= 0;
 
         public int CurrentHealth => health;
@@ -19,5 +23,15 @@ namespace DesertStormZombies.Entity
         public void Reduce(uint amount) => health -= (int)amount;
 
         public void Start() => health = Mathf.Clamp(health, 0, maxHealth);
+
+        private void Update()
+        {
+            if (regenerate && Time.time - lastTime >= 1f)
+            {
+                lastTime = Time.time;
+
+                Heal(5);
+            }
+        }
     }
 }

@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: pistol
   m_EditorClassIdentifier: 
   Damage: 20
+  MagSize: 8
   ShootDistance: 1000
   FireRate: 0
-  ReloadSpeed: 0
+  ReloadSpeed: 1
   Semi: 1
   UseMuzzleFlash: 1
   Model: {fileID: 1935876521067419106, guid: e5c4196e58930ca4bb0302a88de81ef1, type: 3}

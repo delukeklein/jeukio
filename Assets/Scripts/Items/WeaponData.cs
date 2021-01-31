@@ -6,6 +6,7 @@ namespace DesertStormZombies.Items
     public class WeaponData : ScriptableObject
     {
         public int Damage;
+        public int MagSize;
 
         public float ShootDistance;
         public float FireRate;

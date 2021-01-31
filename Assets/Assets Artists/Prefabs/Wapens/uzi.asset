@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: uzi
   m_EditorClassIdentifier: 
   Damage: 15
+  MagSize: 20
   ShootDistance: 100
   FireRate: 0.2
-  ReloadSpeed: 0
+  ReloadSpeed: 1.5
   Semi: 0
   UseMuzzleFlash: 1
   Model: {fileID: 1160963402652010154, guid: 3654f3e76292ee44290bf9047fd8b50a, type: 3}

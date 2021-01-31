@@ -30,6 +30,11 @@ namespace DesertStormZombies.Items
         [SerializeField] private ParticleSystem muzzleParticles;
         [SerializeField] private ParticleSystem sparkParticles;
 
+        private bool reloading;
+
+        [SerializeField] private int bullets;
+        [SerializeField] private int currentBullets;
+
         private WeaponData weaponData;
         private GameObject weaponModel;
 
@@ -52,7 +57,7 @@ namespace DesertStormZombies.Items
 
         private void Update()
         {
-            if (weaponData == null)
+            if (weaponData == null || reloading || SwitchingWeapon)
             {
                 return;
             }
@@ -74,6 +79,10 @@ namespace DesertStormZombies.Items
                 }
             }
 
+            if(bullets >= weaponData.MagSize && Input.GetKeyDown(KeyCode.R))
+            {
+                StartCoroutine(Reload());
+            }
         }
 
         public void SetDamageModifier(float damageModifier) => this.damageModifier = damageModifier;
@@ -83,6 +92,9 @@ namespace DesertStormZombies.Items
         public void SetWeaponData(WeaponData weaponData)
         {
             this.weaponData = weaponData;
+
+            bullets += currentBullets;
+            currentBullets = 0;
 
             if (weaponData != null)
             {
@@ -98,6 +110,13 @@ namespace DesertStormZombies.Items
 
         private void Shoot()
         {
+            if(currentBullets <= 0)
+            {
+                return;
+            }
+
+            currentBullets--;
+
             if (ShootAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1)
             {
                 ShootAnimator.Play("Shoot", -1, 0f);
@@ -154,6 +173,20 @@ namespace DesertStormZombies.Items
             yield return new WaitForSeconds(lightDuration);
 
             muzzleflashLight.enabled = false;
+        }
+
+        private IEnumerator Reload()
+        {
+            reloading = true;
+
+            holderAnimation.Play();
+
+            yield return new WaitForSeconds(weaponData.ReloadSpeed / reloadSpeedModifier);
+
+            currentBullets += weaponData.MagSize - currentBullets;
+            bullets -= weaponData.MagSize - currentBullets;
+
+            reloading = false;
         }
     }
 }

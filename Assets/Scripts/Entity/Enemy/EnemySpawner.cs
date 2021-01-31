@@ -61,10 +61,13 @@ namespace DesertStormZombies.Entity.Enemy
         {
             for (int i = 0; i < RandomSpawnAmount; i++)
             {
-                EnemyAI enemy = Instantiate(RandomEnemy);
+                var enemy = Instantiate(RandomEnemy);
+                var position = transform.localToWorldMatrix.MultiplyVector(RandomSpawnPosition) + transform.position;
 
                 enemy.setTarget(player);
-                enemy.transform.position = transform.localToWorldMatrix.MultiplyVector(RandomSpawnPosition) + transform.position;
+                enemy.transform.position = position;
+
+                print(position);
             }
         }
     }

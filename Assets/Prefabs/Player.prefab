@@ -10512,6 +10512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
+  regenerate: 0
 --- !u!114 &5120491577616465658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10708,6 +10709,8 @@ MonoBehaviour:
   muzzleflashLight: {fileID: 1963962407554462804}
   muzzleParticles: {fileID: 1855628711245345267}
   sparkParticles: {fileID: 4351310027107675467}
+  bullets: 36
+  currentBullets: 12
 --- !u!111 &2155624670701657919
 Animation:
   m_ObjectHideFlags: 0

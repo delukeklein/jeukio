@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: shotgun
   m_EditorClassIdentifier: 
   Damage: 50
+  MagSize: 8
   ShootDistance: 30
   FireRate: 0.5
-  ReloadSpeed: 0
+  ReloadSpeed: 4
   Semi: 0
   UseMuzzleFlash: 1
   Model: {fileID: 6562161203996548949, guid: 7a9608e3e39d5074b9579de20397dc7a, type: 3}

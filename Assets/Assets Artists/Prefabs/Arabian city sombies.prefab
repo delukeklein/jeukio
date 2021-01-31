@@ -1114,7 +1114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6caa0a3b8417cb4896dd9c46ce72e8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointsCost: 4
+  pointsCost: 400
   speed: 200
   destination: {x: 4.5845, y: -40, z: -16.153}
 --- !u!65 &6466683453804425747

@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: ak 47
   m_EditorClassIdentifier: 
   Damage: 35
+  MagSize: 30
   ShootDistance: 1000
   FireRate: 0.15
-  ReloadSpeed: 0
+  ReloadSpeed: 2
   Semi: 0
   UseMuzzleFlash: 1
   Model: {fileID: 3757395047538447260, guid: 3d36e80e17bc64642a98e27d1818eb1e, type: 3}
