@@ -19,10 +19,7 @@ namespace DesertStormZombies.Entity.Enemy
 
         private void OnCollisionEnter(Collision collision)
         {
-            if (collision.gameObject.TryGetComponent(out BulletScript bullet))
-            {
        
-            }
         }
     }
 }

@@ -267,7 +267,6 @@ public class PlayerMovement : MonoBehaviour
         [SerializeField]
         private string run = "Fire3";
 
-
         public float RotateX => Input.GetAxisRaw(rotateX);
  
         public float RotateY => Input.GetAxisRaw(rotateY);
