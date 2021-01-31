@@ -970,6 +970,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6479300938394890106, guid: 362b0fbe2bc356b41ab8f1b4142e8f3c, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6479300938394890106, guid: 362b0fbe2bc356b41ab8f1b4142e8f3c, type: 3}
+      propertyPath: MaxDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6479300938394890106, guid: 362b0fbe2bc356b41ab8f1b4142e8f3c, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8313844610342787626, guid: 362b0fbe2bc356b41ab8f1b4142e8f3c, type: 3}
       propertyPath: m_Name
       value: Arabian city sombies
