@@ -16,6 +16,8 @@ namespace DesertStormZombies.Items
 
         public bool UseMuzzleFlash;
 
+        public AudioClip ShootAudio;
+
         public GameObject Model;
     }
 }

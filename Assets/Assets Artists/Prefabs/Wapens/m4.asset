@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: m4
   m_EditorClassIdentifier: 
   Damage: 25
+  MagSize: 0
   ShootDistance: 1000
   FireRate: 0.1
   ReloadSpeed: 1
   Semi: 0
   UseMuzzleFlash: 1
+  ShootAudio: {fileID: 8300000, guid: a764377339b869e459f5e53fb9258f73, type: 3}
   Model: {fileID: 6051167372963464694, guid: f34e840300a73094d9c10fbccae7d791, type: 3}

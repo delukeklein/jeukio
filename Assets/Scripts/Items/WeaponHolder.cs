@@ -30,6 +30,8 @@ namespace DesertStormZombies.Items
         [SerializeField] private ParticleSystem muzzleParticles;
         [SerializeField] private ParticleSystem sparkParticles;
 
+        [SerializeField] private AudioSource audioSource;
+
         private bool reloading;
 
         [SerializeField] private int bullets;
@@ -93,11 +95,14 @@ namespace DesertStormZombies.Items
         {
             this.weaponData = weaponData;
 
+   
             bullets += currentBullets;
             currentBullets = 0;
 
             if (weaponData != null)
             {
+                audioSource.clip = weaponData.ShootAudio;
+
                 holderAnimation.Play();
 
                 StartCoroutine(ChangeWeapon());
@@ -121,6 +126,8 @@ namespace DesertStormZombies.Items
             {
                 ShootAnimator.Play("Shoot", -1, 0f);
             }
+
+            audioSource.Play();
 
             if(weaponData.UseMuzzleFlash)
             {
