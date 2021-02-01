@@ -20271,6 +20271,7 @@ MonoBehaviour:
   distance: 8
   text: {fileID: 5120491576265761888}
   playerMovement: {fileID: 5120491577616465660}
+  weaponHolder: {fileID: 5120491578043025123}
 --- !u!114 &8869109612080992792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20389,7 +20390,7 @@ MonoBehaviour:
   weaponHolder: {fileID: 5120491578043025123}
   inventory:
     Primary: {fileID: 0}
-    Secondary: {fileID: 11400000, guid: d8d5a34c7f5735b4c9412622ebbd3946, type: 2}
+    Secondary: {fileID: 11400000, guid: 3c539f8dae0178c47bab020b604fae92, type: 2}
     Knife: {fileID: 11400000, guid: ca9255ed0714e4940bc10500a1c83f8b, type: 2}
   input:
     PrimaryKey: 49

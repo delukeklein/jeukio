@@ -1,5 +1,5 @@
 ﻿using DesertStormZombies.Interaction;
-
+using DesertStormZombies.Items;
 using TMPro;
 
 using UnityEngine;
@@ -14,11 +14,15 @@ namespace DesertStormZombies.Entity.Player
 
         [SerializeField] private PlayerMovement playerMovement;
 
+        [SerializeField] private WeaponHolder weaponHolder;
+
         private Interactable interactable;
 
         private Ray InteractionRay => new Ray(transform.position, transform.TransformDirection(Vector3.forward));
 
         public PlayerMovement PlayerMovement => playerMovement;
+
+        public WeaponHolder WeaponHolder => weaponHolder;
 
         private void Update()
         {
