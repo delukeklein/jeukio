@@ -101,9 +101,6 @@ namespace DesertStormZombies.Items
         {
             this.weaponData = weaponData;
 
-            Reserves += currentBullets;
-            currentBullets = 0;
-
             if (weaponData != null)
             {
                 holderAnimation.Play();
@@ -157,11 +154,9 @@ namespace DesertStormZombies.Items
                     enemy.ExplodeParticle.Play();
 
                     pointsHolder += 10;
-                    gameStatistics.AddKills(1);
+                    gameStatistics.Kills++;
 
                     Destroy(hit.collider.gameObject);
-
-                    print(gameStatistics.Kills);
                 }
             }
         }
@@ -170,17 +165,8 @@ namespace DesertStormZombies.Items
         {
             int bulletsToAdd = weaponData.MagSize - currentBullets;
 
-            currentBullets += bulletsToAdd;
-            Reserves -= bulletsToAdd;
-
-            //if (Reserves <= 0)
-            //{
-            //    
-            //}
-            //else if (currentBullets <= 0)
-            //{
-            //    
-            //}
+            currentBullets += Mathf.Clamp(bulletsToAdd, 0, Reserves);
+            Reserves -= Mathf.Clamp(bulletsToAdd, 0, Reserves);
         }
 
         private IEnumerator ChangeWeapon()

@@ -4,10 +4,8 @@ namespace DesertStormZombies.Game
 {
     public class GameStatistics : MonoBehaviour
     {
-        private int kills;
+        public int Kills { get; set; }
 
-        public int Kills => kills;
-
-        public void AddKills(int kills) => this.kills += kills;
+        public int OverallKills { get; set; }
     }
 }

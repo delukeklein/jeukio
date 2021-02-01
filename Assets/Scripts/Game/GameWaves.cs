@@ -16,9 +16,9 @@ namespace DesertStormZombies.Game
         [SerializeField] private float waveMulitplier = 1.5f;
         [SerializeField] private float textDuration;
 
-        public int AmountOfZombies { get; set; }
-
         private int wave;
+
+        public int SpawnedZombies;
 
         public int Wave => wave;
 
@@ -29,7 +29,7 @@ namespace DesertStormZombies.Game
 
         private void Update()
         {
-            if (playerStatistics.Kills > ZombieCap(wave))
+            if (playerStatistics.Kills >= RequiredZombies)
             {
                 StartCoroutine(NextWave());
             }
@@ -39,15 +39,17 @@ namespace DesertStormZombies.Game
         {
             wave++;
 
+            playerStatistics.Kills = 0;
+
+            SpawnedZombies = 0;
+
             text.text = "WAVE " + wave;
 
             yield return new WaitForSeconds(textDuration);
-
+ 
             text.text = "";
         }
 
-        public int ZombieCap(int wave) => (int) (minimumKills * (wave * waveMulitplier));
-
-        public int RequiredZombies => ZombieCap(wave) - ZombieCap(wave - 1);
+        public int RequiredZombies => (int) (minimumKills * (wave * waveMulitplier));
     }
 }

@@ -24335,7 +24335,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3866880204772094697}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 31.73, y: -1.9, z: -13.7}
+  m_LocalPosition: {x: 31.73, y: -1.9, z: -13.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3866880206684504588}
@@ -24357,11 +24357,12 @@ MonoBehaviour:
   - {fileID: 7601726358693768430, guid: 3262f2caaf2119245acf8860c6c033a3, type: 3}
   player: {fileID: 5120491577878079422}
   waves: {fileID: 8405022061769555930}
+  statistics: {fileID: 5120491577878079416}
   minSpawn: 1
   maxSpawn: 3
-  detectionRadius: 8.8
+  detectionRadius: 7.6
   width: 7.3
-  depth: 11.36
+  depth: 8.64
   spawnRate: 4
 --- !u!114 &3866880204829829068
 MonoBehaviour:
@@ -24379,10 +24380,11 @@ MonoBehaviour:
   - {fileID: 7601726358693768430, guid: 3262f2caaf2119245acf8860c6c033a3, type: 3}
   player: {fileID: 5120491577878079422}
   waves: {fileID: 8405022061769555930}
-  minSpawn: 1
-  maxSpawn: 3
-  detectionRadius: 12
-  width: 14.06
+  statistics: {fileID: 5120491577878079416}
+  minSpawn: 14
+  maxSpawn: 14
+  detectionRadius: 12.05
+  width: 10.7
   depth: 14.4
   spawnRate: 4
 --- !u!1 &3866880204829829070
@@ -24410,7 +24412,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3866880204829829070}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -28.6, y: -1.9, z: -27.9}
+  m_LocalPosition: {x: -26.4, y: -1.9, z: -27.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3866880206684504588}
@@ -24449,6 +24451,7 @@ MonoBehaviour:
   - {fileID: 7601726358693768430, guid: 3262f2caaf2119245acf8860c6c033a3, type: 3}
   player: {fileID: 5120491577878079422}
   waves: {fileID: 8405022061769555930}
+  statistics: {fileID: 5120491577878079416}
   minSpawn: 1
   maxSpawn: 3
   detectionRadius: 12
@@ -24485,6 +24488,7 @@ MonoBehaviour:
   - {fileID: 7601726358693768430, guid: 3262f2caaf2119245acf8860c6c033a3, type: 3}
   player: {fileID: 5120491577878079422}
   waves: {fileID: 8405022061769555930}
+  statistics: {fileID: 5120491577878079416}
   minSpawn: 1
   maxSpawn: 3
   detectionRadius: 4.26
@@ -24569,6 +24573,7 @@ MonoBehaviour:
   - {fileID: 7601726358693768430, guid: 3262f2caaf2119245acf8860c6c033a3, type: 3}
   player: {fileID: 5120491577878079422}
   waves: {fileID: 8405022061769555930}
+  statistics: {fileID: 5120491577878079416}
   minSpawn: 1
   maxSpawn: 3
   detectionRadius: 12.01
@@ -24622,6 +24627,7 @@ MonoBehaviour:
   - {fileID: 7601726358693768430, guid: 3262f2caaf2119245acf8860c6c033a3, type: 3}
   player: {fileID: 5120491577878079422}
   waves: {fileID: 8405022061769555930}
+  statistics: {fileID: 5120491577878079416}
   minSpawn: 1
   maxSpawn: 3
   detectionRadius: 12
@@ -24653,7 +24659,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3866880205314578065}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.9, y: -1.9, z: 20.9}
+  m_LocalPosition: {x: 16.9, y: -1.9, z: 13.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3866880206684504588}
@@ -24675,6 +24681,7 @@ MonoBehaviour:
   - {fileID: 7601726358693768430, guid: 3262f2caaf2119245acf8860c6c033a3, type: 3}
   player: {fileID: 5120491577878079422}
   waves: {fileID: 8405022061769555930}
+  statistics: {fileID: 5120491577878079416}
   minSpawn: 1
   maxSpawn: 3
   detectionRadius: 12
@@ -24697,9 +24704,10 @@ MonoBehaviour:
   - {fileID: 7601726358693768430, guid: 3262f2caaf2119245acf8860c6c033a3, type: 3}
   player: {fileID: 5120491577878079422}
   waves: {fileID: 8405022061769555930}
+  statistics: {fileID: 5120491577878079416}
   minSpawn: 1
-  maxSpawn: 3
-  detectionRadius: 8.8
+  maxSpawn: 1
+  detectionRadius: 6.85
   width: 7.6
   depth: 14.4
   spawnRate: 4
@@ -24728,7 +24736,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3866880205696558294}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 34.39, y: -1.9, z: 0.64}
+  m_LocalPosition: {x: 33.42, y: -1.9, z: 0.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3866880206684504588}
@@ -24750,6 +24758,7 @@ MonoBehaviour:
   - {fileID: 7601726358693768430, guid: 3262f2caaf2119245acf8860c6c033a3, type: 3}
   player: {fileID: 5120491577878079422}
   waves: {fileID: 8405022061769555930}
+  statistics: {fileID: 5120491577878079416}
   minSpawn: 1
   maxSpawn: 3
   detectionRadius: 13.9
@@ -24803,6 +24812,7 @@ MonoBehaviour:
   - {fileID: 7601726358693768430, guid: 3262f2caaf2119245acf8860c6c033a3, type: 3}
   player: {fileID: 5120491577878079422}
   waves: {fileID: 8405022061769555930}
+  statistics: {fileID: 5120491577878079416}
   minSpawn: 1
   maxSpawn: 3
   detectionRadius: 8.3
@@ -24873,6 +24883,7 @@ MonoBehaviour:
   - {fileID: 7601726358693768430, guid: 3262f2caaf2119245acf8860c6c033a3, type: 3}
   player: {fileID: 5120491577878079422}
   waves: {fileID: 8405022061769555930}
+  statistics: {fileID: 5120491577878079416}
   minSpawn: 1
   maxSpawn: 3
   detectionRadius: 12
@@ -24923,6 +24934,7 @@ MonoBehaviour:
   - {fileID: 7601726358693768430, guid: 3262f2caaf2119245acf8860c6c033a3, type: 3}
   player: {fileID: 5120491577878079422}
   waves: {fileID: 8405022061769555930}
+  statistics: {fileID: 5120491577878079416}
   minSpawn: 1
   maxSpawn: 3
   detectionRadius: 12
@@ -24993,11 +25005,12 @@ MonoBehaviour:
   - {fileID: 7601726358693768430, guid: 3262f2caaf2119245acf8860c6c033a3, type: 3}
   player: {fileID: 5120491577878079422}
   waves: {fileID: 8405022061769555930}
+  statistics: {fileID: 5120491577878079416}
   minSpawn: 1
   maxSpawn: 3
   detectionRadius: 12
-  width: 14.06
-  depth: 14.4
+  width: 11.6
+  depth: 9.4
   spawnRate: 4
 --- !u!114 &3866880206323317244
 MonoBehaviour:
@@ -25015,6 +25028,7 @@ MonoBehaviour:
   - {fileID: 7601726358693768430, guid: 3262f2caaf2119245acf8860c6c033a3, type: 3}
   player: {fileID: 5120491577878079422}
   waves: {fileID: 8405022061769555930}
+  statistics: {fileID: 5120491577878079416}
   minSpawn: 1
   maxSpawn: 3
   detectionRadius: 9.6
@@ -25085,6 +25099,7 @@ MonoBehaviour:
   - {fileID: 7601726358693768430, guid: 3262f2caaf2119245acf8860c6c033a3, type: 3}
   player: {fileID: 5120491577878079422}
   waves: {fileID: 8405022061769555930}
+  statistics: {fileID: 5120491577878079416}
   minSpawn: 1
   maxSpawn: 3
   detectionRadius: 12
@@ -25199,6 +25214,7 @@ MonoBehaviour:
   - {fileID: 7601726358693768430, guid: 3262f2caaf2119245acf8860c6c033a3, type: 3}
   player: {fileID: 5120491577878079422}
   waves: {fileID: 8405022061769555930}
+  statistics: {fileID: 5120491577878079416}
   minSpawn: 1
   maxSpawn: 3
   detectionRadius: 12
@@ -25221,6 +25237,7 @@ MonoBehaviour:
   - {fileID: 7601726358693768430, guid: 3262f2caaf2119245acf8860c6c033a3, type: 3}
   player: {fileID: 5120491577878079422}
   waves: {fileID: 8405022061769555930}
+  statistics: {fileID: 5120491577878079416}
   minSpawn: 1
   maxSpawn: 3
   detectionRadius: 4.26
@@ -33020,7 +33037,7 @@ MonoBehaviour:
   gameisPaused: 0
   PM: {fileID: 8145911064830979134}
   player: {fileID: 5120491577878079393}
-  camera2: {fileID: 936011821}
+  camera2: {fileID: 0}
   health: {fileID: 5120491577878079417}
 --- !u!1 &4898261980111265107
 GameObject:
@@ -34031,7 +34048,7 @@ MonoBehaviour:
   sparkParticles: {fileID: 4351310027364054025}
   audioSource: {fileID: 8003238557022551495}
   ammoText: {fileID: 1625664574}
-  Reserves: 0
+  Reserves: 24
   currentBullets: 12
 --- !u!4 &5120491577249783714
 Transform:
@@ -55588,8 +55605,9 @@ MonoBehaviour:
   playerStatistics: {fileID: 5120491577878079416}
   text: {fileID: 2179496093339170394}
   minimumKills: 10
-  waveMulitplier: 1.5
+  waveMulitplier: 1.25
   textDuration: 4
+  SpawnedZombies: 0
 --- !u!4 &8405067615494828078
 Transform:
   m_ObjectHideFlags: 0

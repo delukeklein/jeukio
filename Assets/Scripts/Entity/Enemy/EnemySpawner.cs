@@ -12,6 +12,7 @@ namespace DesertStormZombies.Entity.Enemy
         [SerializeField] private EnemyAI[] enemyPrefabs;
         [SerializeField] private PlayerMovement player;
         [SerializeField] private Game.GameWaves waves;
+        [SerializeField] private Game.GameStatistics statistics;
 
         [Header("Settings")]
         [SerializeField] private uint minSpawn;
@@ -62,12 +63,12 @@ namespace DesertStormZombies.Entity.Enemy
         {
             for (int i = 0; i < RandomSpawnAmount; i++)
             {
-                if(waves.AmountOfZombies >= waves.RequiredZombies)
+                if(waves.SpawnedZombies >= waves.RequiredZombies)
                 {
                     continue;
                 }
 
-                waves.AmountOfZombies++;
+                waves.SpawnedZombies++;
 
                 var enemy = Instantiate(RandomEnemy);
                 var navMeshAgent = enemy.GetComponent<NavMeshAgent>();
@@ -75,14 +76,9 @@ namespace DesertStormZombies.Entity.Enemy
                 var position = transform.localToWorldMatrix.MultiplyVector(RandomSpawnPosition) + transform.position;
 
                 enemy.setTarget(player);
-
                 navMeshAgent.enabled = false;
-
                 enemy.transform.position = position;
-
                 navMeshAgent.enabled = true;
-
-                print(position);
             }
         }
     }

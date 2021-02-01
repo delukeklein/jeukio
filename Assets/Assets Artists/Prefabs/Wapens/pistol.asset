@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fc54e119646b544197f6af0456f53a6, type: 3}
   m_Name: pistol
   m_EditorClassIdentifier: 
-  Damage: 20
+  Damage: 100
   MagSize: 16
   ShootDistance: 1000
   FireRate: 0
