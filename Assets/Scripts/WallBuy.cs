@@ -1,32 +1,30 @@
-﻿using DesertStormZombies.Entity.Player;
-using DesertStormZombies.Items;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DesertStormZombies.Entity;
+using DesertStormZombies.Entity.Player;
+using DesertStormZombies.Game;
+using DesertStormZombies.Utility;
+using DesertStormZombies.Items;
 
 namespace DesertStormZombies.Interaction
 {
-    public class RapidFire : Interactable
+    public class WallBuy : Interactable
     {
         [Header("Cost")]
 
         [SerializeField] private int pointsCost;
 
-        [Header("Stats")]
-
-        [SerializeField] float FireRate;
-
         [Header("Scripts")]
-       [SerializeField] WeaponHolder weapon;
-
+        [SerializeField] Inventory inventory;
+        [SerializeField] WeaponHolder weapon;
+        [SerializeField] PlayerInventory playerInventory;
+        [SerializeField] WeaponData weaponData;
 
         [Header("Bools")]
         [SerializeField] private bool toggled = false;
         public bool Toggled => toggled;
-
-        [Header("Particle")]
-        [SerializeField] ParticleSystem part;
+        public EquippedItem equipped;
 
         public override bool Condition(PlayerInteractor interactor)
         {
@@ -37,7 +35,7 @@ namespace DesertStormZombies.Interaction
 
         public override void Focused(PlayerInteractor interactor)
         {
-            interactor.SetText(toggled ? "This PowerUp is already Used" : "Press E to interact\nCosts " + pointsCost + "points");
+            interactor.SetText(toggled ? "Press E to buy Bullets\nCost" + pointsCost + "points" : "Press E to interact\nCosts " + pointsCost + "points");
         }
 
         public override void Interact(PlayerInteractor interactor)
@@ -52,24 +50,19 @@ namespace DesertStormZombies.Interaction
 
                     pointsHolder -= pointsCost;
 
-                    FireRate = weapon.fireRateModifier = 0.3f;
-                    part.gameObject.SetActive(true);
-
+                    playerInventory.SetPrimary(weaponData);
                 }
             }
         }
-
         protected override void Start()
         {
             base.Start();
             weapon.GetComponent<WeaponHolder>();
-            part.GetComponent<ParticleSystem>();
-
         }
 
         void Update()
         {
+
         }
     }
-
 }

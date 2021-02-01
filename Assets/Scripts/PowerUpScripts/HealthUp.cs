@@ -27,6 +27,9 @@ namespace DesertStormZombies.Interaction
         [SerializeField] private bool toggled = false;
         public bool Toggled => toggled;
 
+        [Header("Particle")]
+        [SerializeField] ParticleSystem part;
+
         public override bool Condition(PlayerInteractor interactor)
         {
             var pointsHolder = interactor.GetComponent<PointsHolder>();
@@ -52,6 +55,8 @@ namespace DesertStormZombies.Interaction
 
                     playerCurrentHealth = playerHealth.health = 150;
                     playerCurrentHealth = playerHealth.maxHealth = 150;
+                    part.gameObject.SetActive(true);
+
                 }
             }
         }
@@ -60,6 +65,7 @@ namespace DesertStormZombies.Interaction
         {
             base.Start();
             playerHealth.GetComponent<Health>();
+            part.GetComponent<ParticleSystem>();
 
         }
 
