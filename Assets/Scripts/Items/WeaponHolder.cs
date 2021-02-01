@@ -32,6 +32,8 @@ namespace DesertStormZombies.Items
 
         [SerializeField] private AudioSource audioSource;
 
+        [SerializeField] private TMPro.TextMeshProUGUI ammoText;
+
         private bool reloading;
 
         [SerializeField] private int bullets;
@@ -59,6 +61,8 @@ namespace DesertStormZombies.Items
 
         private void Update()
         {
+            ammoText.text = currentBullets + "/" + bullets;
+
             if (weaponData == null || reloading || SwitchingWeapon)
             {
                 return;

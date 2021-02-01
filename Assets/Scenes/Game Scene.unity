@@ -594,14 +594,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5120491577616465660, guid: 2c2f10177cbb4644ca1b0d54d82f528c, type: 3}
-      propertyPath: maxVerticalAngle
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 5120491577616465660, guid: 2c2f10177cbb4644ca1b0d54d82f528c, type: 3}
-      propertyPath: minVerticalAngle
-      value: -90
-      objectReference: {fileID: 0}
     - target: {fileID: 5120491577616465663, guid: 2c2f10177cbb4644ca1b0d54d82f528c, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -645,10 +637,6 @@ PrefabInstance:
     - target: {fileID: 5120491577616465663, guid: 2c2f10177cbb4644ca1b0d54d82f528c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8405022062034314904, guid: 2c2f10177cbb4644ca1b0d54d82f528c, type: 3}
-      propertyPath: waveMulitplier
-      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c2f10177cbb4644ca1b0d54d82f528c, type: 3}
