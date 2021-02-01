@@ -16,6 +16,9 @@ public class EnemyAI : MonoBehaviour
 
     [SerializeField] private Transform target;
 
+    [SerializeField] private ParticleSystem explodeParticle;
+    [SerializeField] private ParticleSystem bloodParticle;
+
     private const float AttackCooldown = 1;
 
     private float lastAttackTime = 0;
@@ -25,6 +28,9 @@ public class EnemyAI : MonoBehaviour
     private IntervalTimer intervalTimer;
 
     private NavMeshAgent agent;
+
+    public ParticleSystem ExplodeParticle => explodeParticle;
+    public ParticleSystem BloodParticle => bloodParticle;
 
     enum AIState
     {

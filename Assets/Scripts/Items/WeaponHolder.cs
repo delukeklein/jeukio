@@ -139,12 +139,16 @@ namespace DesertStormZombies.Items
           
             if (Physics.Raycast(ShotRay, out RaycastHit hit, weaponData.ShootDistance) && hit.collider.TryGetComponent(out Health health))
             {
+                var enemy = health.GetComponent<EnemyAI>();
+                enemy.BloodParticle.Play();
+
                 health.Reduce((uint)(weaponData.Damage * damageModifier));
 
                 if (health.isDepleted)
                 {
-                    pointsHolder += 10;
+                    enemy.ExplodeParticle.Play();
 
+                    pointsHolder += 10;
                     gameStatistics.AddKills(1);
 
                     Destroy(hit.collider.gameObject);
