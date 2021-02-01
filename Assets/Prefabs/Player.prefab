@@ -10540,7 +10540,7 @@ MonoBehaviour:
   playerStatistics: {fileID: 5120491577616465658}
   text: {fileID: 2179496094150242072}
   minimumKills: 10
-  waveMulitplier: 1.4
+  waveMulitplier: 1.5
   textDuration: 4
 --- !u!1 &5120491577616465635
 GameObject:
