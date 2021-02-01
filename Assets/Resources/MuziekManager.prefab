@@ -140,5 +140,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 887b49fee03428a4caed71c8c7ca88ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MusicSource: {fileID: 7611346940599959549}
-  Music: {fileID: 8300000, guid: 1939848311fff2444b86f2a3addb4ddf, type: 3}
+  MusicSource: {fileID: 0}
+  Music: {fileID: 0}
