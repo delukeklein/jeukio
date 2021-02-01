@@ -105,17 +105,17 @@ namespace DesertStormZombies.Entity.Player
 
         private void SwitchItem()
         {
-            if(input.IsPrimaryPressed)
+            if(input.IsPrimaryPressed && inventory.Primary != null)
             {
                 equipped = EquippedItem.Primary;
                 weaponHolder.SetWeaponData(inventory.Primary);
             }
-            else if (input.IsSecondaryPressed)
+            else if (input.IsSecondaryPressed && inventory.Secondary != null)
             {
                 equipped = EquippedItem.Secondary;
                 weaponHolder.SetWeaponData(inventory.Secondary);
             }
-            else if (input.IsKnifePressed)
+            else if (input.IsKnifePressed && inventory.Knife != null)
             {
                 equipped = EquippedItem.Knife;
                 weaponHolder.SetWeaponData(inventory.Knife);
