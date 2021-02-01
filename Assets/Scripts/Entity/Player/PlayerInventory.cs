@@ -59,17 +59,23 @@ namespace DesertStormZombies.Entity.Player
 
         public void SetPrimary(WeaponData weaponData)
         {
+            equipped = EquippedItem.Primary;
             inventory.Primary = weaponData;
+            SwitchItem();
         }
 
         public void SetSecondary(WeaponData weaponData)
         {
+            equipped = EquippedItem.Secondary;
             inventory.Secondary = weaponData;
+            SwitchItem();
         }
 
         public void SetKnife(WeaponData weaponData)
         {
+            equipped = EquippedItem.Knife;
             inventory.Knife = weaponData;
+            SwitchItem();
         }
 
         private void Start()
