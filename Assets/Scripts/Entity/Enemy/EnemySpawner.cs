@@ -1,7 +1,7 @@
 ﻿using DesertStormZombies.Utility;
 
 using UnityEngine;
-
+using UnityEngine.AI;
 using static UnityEngine.Random;
 
 namespace DesertStormZombies.Entity.Enemy
@@ -62,10 +62,17 @@ namespace DesertStormZombies.Entity.Enemy
             for (int i = 0; i < RandomSpawnAmount; i++)
             {
                 var enemy = Instantiate(RandomEnemy);
+                var navMeshAgent = enemy.GetComponent<NavMeshAgent>();
+
                 var position = transform.localToWorldMatrix.MultiplyVector(RandomSpawnPosition) + transform.position;
 
                 enemy.setTarget(player);
+
+                navMeshAgent.enabled = false;
+
                 enemy.transform.position = position;
+
+                navMeshAgent.enabled = true;
 
                 print(position);
             }

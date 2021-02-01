@@ -20,4 +20,5 @@ MonoBehaviour:
   Semi: 0
   UseMuzzleFlash: 1
   ShootAudio: {fileID: 8300000, guid: 6739c01659ad96d47987f4ddee226b36, type: 3}
+  ReloadAudio: {fileID: 8300000, guid: db7c8b98105051243ab68aa420755d19, type: 3}
   Model: {fileID: 3757395047538447260, guid: 3d36e80e17bc64642a98e27d1818eb1e, type: 3}

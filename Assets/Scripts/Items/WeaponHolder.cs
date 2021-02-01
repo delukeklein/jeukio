@@ -101,8 +101,6 @@ namespace DesertStormZombies.Items
 
             if (weaponData != null)
             {
-                audioSource.clip = weaponData.ShootAudio;
-
                 holderAnimation.Play();
 
                 StartCoroutine(ChangeWeapon());
@@ -127,6 +125,7 @@ namespace DesertStormZombies.Items
                 ShootAnimator.Play("Shoot", -1, 0f);
             }
 
+            audioSource.clip = weaponData.ShootAudio;
             audioSource.Play();
 
             if(weaponData.UseMuzzleFlash)
@@ -199,6 +198,9 @@ namespace DesertStormZombies.Items
             reloading = true;
 
             holderAnimation.Play();
+
+            audioSource.clip = weaponData.ReloadAudio;
+            audioSource.Play();
 
             yield return new WaitForSeconds(weaponData.ReloadSpeed / reloadSpeedModifier);
 

@@ -434,6 +434,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5120491577616465660, guid: 2c2f10177cbb4644ca1b0d54d82f528c, type: 3}
+      propertyPath: maxVerticalAngle
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5120491577616465660, guid: 2c2f10177cbb4644ca1b0d54d82f528c, type: 3}
+      propertyPath: minVerticalAngle
+      value: -90
+      objectReference: {fileID: 0}
     - target: {fileID: 5120491577616465663, guid: 2c2f10177cbb4644ca1b0d54d82f528c, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -4624,7 +4632,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79bb1601f48c1974fb721101eeabcf11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 8145911064984353947}
 --- !u!224 &8646414898414272898
 RectTransform:
   m_ObjectHideFlags: 0

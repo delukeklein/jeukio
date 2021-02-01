@@ -57,6 +57,21 @@ namespace DesertStormZombies.Entity.Player
 
         public WeaponHolder GetWeaponHolder => weaponHolder;
 
+        public void SetPrimary(WeaponData weaponData)
+        {
+            inventory.Primary = weaponData;
+        }
+
+        public void SetSecondary(WeaponData weaponData)
+        {
+            inventory.Secondary = weaponData;
+        }
+
+        public void SetKnife(WeaponData weaponData)
+        {
+            inventory.Knife = weaponData;
+        }
+
         private void Start()
         {
             equipped = EquippedItem.Secondary;

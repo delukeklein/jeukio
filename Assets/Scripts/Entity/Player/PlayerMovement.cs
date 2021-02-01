@@ -86,8 +86,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move();
         Rotate();
+        Move();
+
         isGrounded = false;
     }
 
@@ -123,6 +124,25 @@ public class PlayerMovement : MonoBehaviour
 
         isGrounded = false;
         rigidbody3D.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+    }
+
+    private void Rotate()
+    {
+        var rotationX = this.rotationX.Update(input.RotateX * mouseSensitivity, rotationSmoothness);
+        var rotationY = this.rotationY.Update(input.RotateY * mouseSensitivity, rotationSmoothness);
+
+        var clampedY = RestrictVerticalRotation(rotationY);
+
+        this.rotationY.Current = clampedY;
+
+        var worldUp = torso.InverseTransformDirection(Vector3.up);
+        var rotation = torso.rotation *
+                       Quaternion.AngleAxis(rotationX, worldUp) *
+                       Quaternion.AngleAxis(clampedY, Vector3.left);
+
+        transform.eulerAngles = new Vector3(0f, rotation.eulerAngles.y, 0f);
+
+        torso.rotation = Quaternion.Euler(rotation.eulerAngles.x, rotation.eulerAngles.y, 0f);
     }
 
     private void Move()
@@ -176,28 +196,16 @@ public class PlayerMovement : MonoBehaviour
         return true;
     }
 
-    private void Rotate()
-    {
-        var rotationX = this.rotationX.Update(input.RotateX * mouseSensitivity, rotationSmoothness);
-        var rotationY = this.rotationY.Update(input.RotateY * mouseSensitivity, rotationSmoothness);
-        var clampedY = RestrictVerticalRotation(rotationY);
 
-        this.rotationY.Current = clampedY;
-
-        var worldUp = torso.InverseTransformDirection(Vector3.up);
-        var rotation = torso.rotation *
-                       Quaternion.AngleAxis(rotationX, worldUp) *
-                       Quaternion.AngleAxis(clampedY, Vector3.left);
-
-        transform.eulerAngles = new Vector3(0f, rotation.eulerAngles.y, 0f);
-        torso.rotation = rotation;
-    }
 
     private float RestrictVerticalRotation(float mouseY)
     {
         var currentAngle = NormalizeAngle(transform.eulerAngles.x);
 
-        return Mathf.Clamp(mouseY, minVerticalAngle + currentAngle + 0.01f, maxVerticalAngle + currentAngle - 0.01f);
+        var minY = minVerticalAngle + currentAngle;
+        var maxY = maxVerticalAngle + currentAngle;
+
+        return Mathf.Clamp(mouseY, minY + 0.01f, maxY - 0.01f);
     }
 
     private float NormalizeAngle(float angleDegrees)
