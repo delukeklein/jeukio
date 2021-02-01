@@ -1624,7 +1624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f18d023ebc278564ea55f2550c0d8a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Jeremy
+  sceneName: MainGame
 --- !u!114 &2932240525507246672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1690,7 +1690,7 @@ RectTransform:
   m_GameObject: {fileID: 2932240525507246678}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 19.771389, y: 11.296, z: 11.296}
+  m_LocalScale: {x: 19.771389, y: 12.718166, z: 11.296}
   m_Children: []
   m_Father: {fileID: 2932240525023887224}
   m_RootOrder: 0
@@ -1886,19 +1886,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &4358612682591826330
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4358612682591826335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79bb1601f48c1974fb721101eeabcf11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 4358612682591826333}
 --- !u!224 &4358612682591826332
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1981,7 +1968,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4358612682591826332}
   - component: {fileID: 4358612682591826333}
-  - component: {fileID: 4358612682591826330}
+  - component: {fileID: 4358612682591826336}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -1989,6 +1976,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4358612682591826336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4358612682591826335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79bb1601f48c1974fb721101eeabcf11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 4358612682591826333}
 --- !u!222 &4358612682860509658
 CanvasRenderer:
   m_ObjectHideFlags: 0

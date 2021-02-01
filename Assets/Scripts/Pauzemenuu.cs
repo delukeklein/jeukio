@@ -1,5 +1,4 @@
 ﻿using DesertStormZombies.Entity;
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,15 +8,10 @@ public class Pauzemenuu : MonoBehaviour
 
     public PlayerMovement PC;
     public GameObject PM;
-    public GameObject DeathScreen;
 
     [SerializeField] private Health health;
 
     private bool isDead = false;
-
-    [Header("Disable Components")]
-    // [SerializeField] GameObject Playeroff;
-    [SerializeField] private MonoBehaviour[] disableComponents;
 
     void Update()
     {
@@ -44,22 +38,21 @@ public class Pauzemenuu : MonoBehaviour
     public void Pause()
     {
         gameisPaused = true;
-        Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.Confined;
-
-
         if (gameisPaused == true)
         {
             PM?.SetActive(true);
 
             PC.enabled = false;
         }
+        Time.timeScale = 0f;
+        print(Time.timeScale);
+
     }
 
     public void Resume()
     {
         gameisPaused = false;
-        Time.timeScale = 1f;
         Cursor.visible = false;
 
         if (gameisPaused == false)
@@ -68,6 +61,9 @@ public class Pauzemenuu : MonoBehaviour
 
             PC.enabled = true;
         }
+        Time.timeScale = 1f;
+        print(Time.timeScale);
+
     }
 
     public void death()

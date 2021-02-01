@@ -33,8 +33,6 @@ namespace DesertStormZombies.Game
             {
                 StartCoroutine(NextWave());
             }
-
-            print(ZombieCap(3) + " :: " + ZombieCap(4));
         }
 
         private IEnumerator NextWave()

@@ -15,7 +15,6 @@ public class UI : MonoBehaviour
     public void Settings()
     {
         ShowSettings = true;
-
         set.SetActive(true);
     }
     public void FPS()
@@ -26,22 +25,17 @@ public class UI : MonoBehaviour
     public void Close()
     {
         ShowSettings = false;
-
         set.SetActive(false);
         Time.timeScale = 1f;
-
+        print(Time.timeScale);
     }
     public void Close1()
     {
         ShowSettings = false;
-
         set.SetActive(false);
-        
-
     }
     public void Quit()
     {
         Application.Quit();
-        print("quit");
     }
 }
