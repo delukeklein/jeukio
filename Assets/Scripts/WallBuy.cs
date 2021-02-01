@@ -16,14 +16,10 @@ namespace DesertStormZombies.Interaction
         [SerializeField] private int pointsCost;
 
         [Header("Scripts")]
-        [SerializeField] Inventory inventory;
         [SerializeField] WeaponHolder weapon;
         [SerializeField] PlayerInventory playerInventory;
         [SerializeField] WeaponData weaponData;
 
-        [Header("Bools")]
-        [SerializeField] private bool toggled = false;
-        public bool Toggled => toggled;
         public EquippedItem equipped;
 
         public override bool Condition(PlayerInteractor interactor)
@@ -35,7 +31,7 @@ namespace DesertStormZombies.Interaction
 
         public override void Focused(PlayerInteractor interactor)
         {
-            interactor.SetText("Press E to buy gun \nCosts " + pointsCost + "points");
+            interactor.SetText("Press E to buy\nCosts " + pointsCost + "points");
         }
 
         public override void Interact(PlayerInteractor interactor)

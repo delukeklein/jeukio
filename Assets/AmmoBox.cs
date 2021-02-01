@@ -34,7 +34,7 @@ namespace DesertStormZombies.Interaction
             {
                 pointsHolder -= pointsCost;
 
-                interactor.WeaponHolder.bullets += 32;
+                interactor.WeaponHolder.Reserves += 32;
 
                 audioSource.Play();
             }

@@ -36,7 +36,7 @@ namespace DesertStormZombies.Items
 
         private bool reloading;
 
-        [SerializeField] public int bullets;
+        [SerializeField] public int Reserves;
         [SerializeField] public int currentBullets;
 
         private WeaponData weaponData;
@@ -61,7 +61,7 @@ namespace DesertStormZombies.Items
 
         private void Update()
         {
-            ammoText.text = currentBullets + "/" + bullets;
+            ammoText.text = currentBullets + "/" + Reserves;
 
             fireRateTimer.Add(Time.deltaTime);
 
@@ -101,7 +101,7 @@ namespace DesertStormZombies.Items
         {
             this.weaponData = weaponData;
 
-            bullets += currentBullets;
+            Reserves += currentBullets;
             currentBullets = 0;
 
             if (weaponData != null)
@@ -160,6 +160,8 @@ namespace DesertStormZombies.Items
                     gameStatistics.AddKills(1);
 
                     Destroy(hit.collider.gameObject);
+
+                    print(gameStatistics.Kills);
                 }
             }
         }
@@ -169,7 +171,16 @@ namespace DesertStormZombies.Items
             int bulletsToAdd = weaponData.MagSize - currentBullets;
 
             currentBullets += bulletsToAdd;
-            bullets -= bulletsToAdd;
+            Reserves -= bulletsToAdd;
+
+            //if (Reserves <= 0)
+            //{
+            //    
+            //}
+            //else if (currentBullets <= 0)
+            //{
+            //    
+            //}
         }
 
         private IEnumerator ChangeWeapon()

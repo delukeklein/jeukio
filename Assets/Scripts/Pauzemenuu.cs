@@ -6,9 +6,11 @@ public class Pauzemenuu : MonoBehaviour
 {
     public bool gameisPaused = false;
 
-    public PlayerMovement PC;
     public GameObject PM;
 
+    public GameObject player;
+    public GameObject camera2;
+    
     [SerializeField] private Health health;
 
     private bool isDead = false;
@@ -41,9 +43,9 @@ public class Pauzemenuu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
         if (gameisPaused == true)
         {
-            PM?.SetActive(true);
-
-            PC.enabled = false;
+            PM.SetActive(true);
+            player.SetActive(false);
+            camera2.SetActive(true);
         }
         Time.timeScale = 0f;
         print(Time.timeScale);
@@ -57,9 +59,10 @@ public class Pauzemenuu : MonoBehaviour
 
         if (gameisPaused == false)
         {
-            PM?.SetActive(false);
+            PM.SetActive(false);
+            player.SetActive(true);
+            camera2.SetActive(false);
 
-            PC.enabled = true;
         }
         Time.timeScale = 1f;
         print(Time.timeScale);

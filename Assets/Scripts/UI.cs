@@ -27,7 +27,7 @@ public class UI : MonoBehaviour
         ShowSettings = false;
         set.SetActive(false);
         Time.timeScale = 1f;
-        print(Time.timeScale);
+        
     }
     public void Close1()
     {
