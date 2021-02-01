@@ -19,5 +19,7 @@ MonoBehaviour:
   ReloadSpeed: 0
   Semi: 1
   UseMuzzleFlash: 0
+  Knife: 1
   ShootAudio: {fileID: 0}
+  ReloadAudio: {fileID: 0}
   Model: {fileID: 6185481141697109982, guid: af9820a6f43b1f645ab167c317c485a2, type: 3}

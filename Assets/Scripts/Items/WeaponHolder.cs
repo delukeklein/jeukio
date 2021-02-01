@@ -77,7 +77,7 @@ namespace DesertStormZombies.Items
             }
             else
             {
-                fireRateTimer.Interval = weaponData.FireRate * fireRateModifier;
+                fireRateTimer.Interval = weaponData.FireRate / fireRateModifier;
 
                 if (Input.GetMouseButton(0) && fireRateTimer.Check(Time.deltaTime))
                 {
@@ -99,7 +99,6 @@ namespace DesertStormZombies.Items
         {
             this.weaponData = weaponData;
 
-   
             bullets += currentBullets;
             currentBullets = 0;
 
@@ -117,7 +116,7 @@ namespace DesertStormZombies.Items
 
         private void Shoot()
         {
-            if(currentBullets <= 0)
+            if(currentBullets <= 0 || weaponData.Knife)
             {
                 return;
             }
