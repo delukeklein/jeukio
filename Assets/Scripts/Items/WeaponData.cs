@@ -16,6 +16,8 @@ namespace DesertStormZombies.Items
 
         public bool UseMuzzleFlash;
 
+        public bool Knife;
+
         public AudioClip ShootAudio;
         public AudioClip ReloadAudio;
 
