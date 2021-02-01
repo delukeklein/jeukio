@@ -44,7 +44,7 @@ namespace DesertStormZombies.Items
 
         private Animation holderAnimation;
 
-        private IntervalTimer fireRateTimer;
+        private IntervalTimerContinues fireRateTimer;
 
         private Ray ShotRay => new Ray(transform.position, transform.TransformDirection(Vector3.forward));
 
@@ -54,7 +54,7 @@ namespace DesertStormZombies.Items
 
         private void Awake()
         {
-            fireRateTimer = new IntervalTimer(0);
+            fireRateTimer = new IntervalTimerContinues(0);
 
             holderAnimation = GetComponent<Animation>();
         }
@@ -62,6 +62,8 @@ namespace DesertStormZombies.Items
         private void Update()
         {
             ammoText.text = currentBullets + "/" + bullets;
+
+            fireRateTimer.Add(Time.deltaTime);
 
             if (weaponData == null || reloading || SwitchingWeapon)
             {
@@ -79,13 +81,13 @@ namespace DesertStormZombies.Items
             {
                 fireRateTimer.Interval = weaponData.FireRate / fireRateModifier;
 
-                if (Input.GetMouseButton(0) && fireRateTimer.Check(Time.deltaTime))
+                if (Input.GetMouseButton(0) && fireRateTimer.Check())
                 {
                     Shoot();
                 }
             }
 
-            if(bullets >= weaponData.MagSize && Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.R))
             {
                 StartCoroutine(Reload());
             }
@@ -116,12 +118,15 @@ namespace DesertStormZombies.Items
 
         private void Shoot()
         {
-            if(currentBullets <= 0 || weaponData.Knife)
+            if (!weaponData.Knife)
             {
-                return;
-            }
+                if (currentBullets <= 0)
+                {
+                    return;
+                }
 
-            currentBullets--;
+                currentBullets--;
+            }
 
             if (ShootAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1)
             {
@@ -131,7 +136,7 @@ namespace DesertStormZombies.Items
             audioSource.clip = weaponData.ShootAudio;
             audioSource.Play();
 
-            if(weaponData.UseMuzzleFlash)
+            if (weaponData.UseMuzzleFlash)
             {
                 sparkParticles.Emit(Random.Range(minSparkEmission, maxSparkEmission));
 
@@ -139,7 +144,7 @@ namespace DesertStormZombies.Items
 
                 StartCoroutine(MuzzleFlashLight());
             }
-          
+
             if (Physics.Raycast(ShotRay, out RaycastHit hit, weaponData.ShootDistance) && hit.collider.TryGetComponent(out Health health))
             {
                 var enemy = health.GetComponent<EnemyAI>();

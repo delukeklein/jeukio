@@ -17,4 +17,33 @@
             return elapsed >= Interval;
         }
     }
+
+    public class IntervalTimerContinues
+    {
+        public float Interval { get; set; }
+
+        private float elapsed;
+
+        public IntervalTimerContinues(float interval)
+        {
+            this.Interval = interval;
+        }
+
+        public void Add(float delteTime)
+        {
+            elapsed = elapsed + delteTime;
+        }
+
+        public bool Check()
+        {
+            bool done = elapsed >= Interval;
+
+            if(done)
+            {
+                elapsed = 0;
+            }
+
+            return done;
+        }
+    }
 }

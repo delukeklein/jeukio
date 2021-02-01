@@ -15,10 +15,11 @@ MonoBehaviour:
   Damage: 20
   MagSize: 20
   ShootDistance: 100
-  FireRate: 0.1
+  FireRate: 0.05
   ReloadSpeed: 1.5
   Semi: 0
   UseMuzzleFlash: 1
+  Knife: 0
   ShootAudio: {fileID: 8300000, guid: 6dd7024f00606b44eb5884197a66a893, type: 3}
   ReloadAudio: {fileID: 8300000, guid: db7c8b98105051243ab68aa420755d19, type: 3}
   Model: {fileID: 6427057835961766785, guid: f51435493dfc66646b748b7326a5ef02, type: 3}
