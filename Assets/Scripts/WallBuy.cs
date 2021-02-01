@@ -35,24 +35,16 @@ namespace DesertStormZombies.Interaction
 
         public override void Focused(PlayerInteractor interactor)
         {
-            interactor.SetText(toggled ? "Press E to buy Bullets\nCost" + pointsCost + "points" : "Press E to interact\nCosts " + pointsCost + "points");
+            interactor.SetText("Press E to buy gun \nCosts " + pointsCost + "points");
         }
 
         public override void Interact(PlayerInteractor interactor)
         {
-            if (!toggled)
-            {
-                toggled = true;
+             var pointsHolder = interactor.GetComponent<PointsHolder>();
 
-                if (Toggled == true)
-                {
-                    var pointsHolder = interactor.GetComponent<PointsHolder>();
+             pointsHolder -= pointsCost;
 
-                    pointsHolder -= pointsCost;
-
-                    playerInventory.SetPrimary(weaponData);
-                }
-            }
+             playerInventory.SetPrimary(weaponData);
         }
         protected override void Start()
         {

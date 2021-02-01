@@ -36,8 +36,8 @@ namespace DesertStormZombies.Items
 
         private bool reloading;
 
-        [SerializeField] private int bullets;
-        [SerializeField] private int currentBullets;
+        [SerializeField] public int bullets;
+        [SerializeField] public int currentBullets;
 
         private WeaponData weaponData;
         private GameObject weaponModel;
