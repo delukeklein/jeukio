@@ -10,9 +10,6 @@ namespace DesertStormZombies.Interaction
         [Header("Cost")]
 
         [SerializeField] private int pointsCost;
-       
-        [Header("Scripts")]
-        [SerializeField] WeaponHolder weapon;
 
         [Header("Audio Source")]
         [SerializeField] AudioSource audioSource;
@@ -32,7 +29,6 @@ namespace DesertStormZombies.Interaction
         public override void Interact(PlayerInteractor interactor)
         {
             var pointsHolder = interactor.GetComponent<PointsHolder>();
-
 
             if (pointsHolder.Amount >= pointsCost)
             {
