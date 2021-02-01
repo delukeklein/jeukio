@@ -10,6 +10,9 @@ namespace DesertStormZombies.Interaction
         [Header("Cost")]
 
         [SerializeField] private int pointsCost;
+       
+        [Header("Scripts")]
+        [SerializeField] WeaponHolder weapon;
 
         [Header("Audio Source")]
         [SerializeField] AudioSource audioSource;
