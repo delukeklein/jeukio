@@ -3286,9 +3286,7 @@ MonoBehaviour:
   gameisPaused: 0
   PC: {fileID: 211970361}
   PM: {fileID: 8145911064830979134}
-  DeathScreen: {fileID: 1639874104593406169}
   health: {fileID: 211970359}
-  disableComponents: []
 --- !u!1 &4898261980111265107
 GameObject:
   m_ObjectHideFlags: 0
@@ -4795,6 +4793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79bb1601f48c1974fb721101eeabcf11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 0}
 --- !u!224 &8646414898414272898
 RectTransform:
   m_ObjectHideFlags: 0
