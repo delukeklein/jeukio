@@ -180,8 +180,6 @@ namespace DesertStormZombies.Items
 
             InstantiateWeaponData();
 
-            ReloadAmmo();
-
             SwitchingWeapon = false;
         }
 
@@ -202,8 +200,6 @@ namespace DesertStormZombies.Items
 
             muzzleflashLight.enabled = false;
         }
-
-
 
         private IEnumerator Reload()
         {
