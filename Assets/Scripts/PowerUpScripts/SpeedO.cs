@@ -27,6 +27,9 @@ namespace DesertStormZombies.Interaction
         [SerializeField] private bool toggled = false;
         public bool Toggled => toggled;
 
+        [Header("Particle")]
+        [SerializeField] ParticleSystem part;
+
         public override bool Condition(PlayerInteractor interactor)
         {
             var pointsHolder = interactor.GetComponent<PointsHolder>();
@@ -53,6 +56,8 @@ namespace DesertStormZombies.Interaction
 
                     playerWalkSpeed = playerMovement.walkingSpeed = 10;
                     playerRunningSpeed = playerMovement.runningSpeed = 15;
+                    part.gameObject.SetActive(true);
+
                 }
             }
         }
@@ -61,6 +66,8 @@ namespace DesertStormZombies.Interaction
         {
             base.Start();
             playerMovement.GetComponent<PlayerMovement>();
+            part.GetComponent<ParticleSystem>();
+
         }
 
         void Update()

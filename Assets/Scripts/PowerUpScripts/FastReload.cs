@@ -12,21 +12,20 @@ namespace DesertStormZombies.Interaction
 
         [SerializeField] private int pointsCost;
 
-        // [Header("")]
-        //[SerializeField] PlayerMovement playerMovement;
-
         [Header("Stats")]
 
-        //[SerializeField] float playerWalkSpeed;
-        // [SerializeField] float playerRunningSpeed;
+        [SerializeField] float reloadSpeed;
 
         [Header("Scripts")]
-        //[SerializeField] PlayerMovement playerMovement;
+        [SerializeField] WeaponHolder weapon;
 
 
         [Header("Bools")]
         [SerializeField] private bool toggled = false;
         public bool Toggled => toggled;
+
+        [Header("Particle")]
+       [SerializeField] ParticleSystem part;
 
         public override bool Condition(PlayerInteractor interactor)
         {
@@ -51,20 +50,26 @@ namespace DesertStormZombies.Interaction
                     var pointsHolder = interactor.GetComponent<PointsHolder>();
 
                     pointsHolder -= pointsCost;
+                  
+                    reloadSpeed = weapon.reloadSpeedModifier = 2;
+
+                    part.gameObject.SetActive(true);
+                    
+
                 }
             }
-
         }
 
         protected override void Start()
         {
             base.Start();
-            //playerHealth.GetComponent<Health>();
+            weapon.GetComponent<WeaponHolder>();
+            part.GetComponent<ParticleSystem>();
         }
 
         void Update()
         {
-
+           
         }
     }
 }
